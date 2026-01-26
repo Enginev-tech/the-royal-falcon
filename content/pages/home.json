@@ -1,0 +1,37 @@
+{
+  "seo": {
+    "title": "Restaurant, bar & entertainment in Arendonk",
+    "description": "The Royal Falcon in Arendonk: restaurant, cocktails en entertainment (snooker, biljart, darts). Reserveer een tafel of ontdek onze events en live sports."
+  },
+  "mainEvent": {
+    "sectionTitle": "Main Event",
+    "sectionSubtitle": "Beleef een avond uit in Arendonk met chef specials, signature cocktails en entertainment.",
+    "badge": "ELKE VRIJDAG & ZATERDAG",
+    "cardTitle": "Royal Night",
+    "cardDescription": "Live entertainment, cocktails en specials - ideaal voor een avond met vrienden of collega's. Van casual borrel tot main event: dit is The Royal Falcon.",
+    "bullets": [
+      "Snooker, biljart, darts & FIFA",
+      "Signature cocktails & bar bites",
+      "Live sports op groot scherm",
+      "Events & feesten op maat"
+    ],
+    "primaryCta": {
+      "label": "Bekijk agenda",
+      "href": "/events"
+    },
+    "secondaryCta": {
+      "label": "Reserveer",
+      "href": "/contact#booking"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Alles onder een dak in Arendonk: restaurant, bar, entertainment en events.",
+    "intro": "The Royal Falcon is de all‑in‑one hotspot in Arendonk: kom eten, drink een cocktail aan de bar en geniet van entertainment zoals snooker en darts. Ideaal voor dates, groepen en bedrijfsuitjes."
+  },
+  "menus": {
+    "title": "Menu's",
+    "subtitle": "Ontdek ons eten, onze cocktails en bar bites.",
+    "intro": "Van lunch en diner tot cocktails en desserts: onze menu’s zijn samengesteld voor elke smaak. Perfect voor een avond uit in Arendonk of een ontspannen borrel met vrienden."
+  }
+}

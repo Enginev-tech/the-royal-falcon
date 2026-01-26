@@ -4,6 +4,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { useSeo } from '../useSeo'
 import { menuData } from '../content/menus'
+import drinkenContent from '../../../content/pages/drinken.json'
 
 function DrinkMenuBlock(props: {
   categories: Array<{
@@ -46,9 +47,8 @@ function DrinkMenuBlock(props: {
 
 export function DrinkenPage() {
   useSeo({
-    title: 'Cocktails & bar in Arendonk',
-    description:
-      'Drinken bij The Royal Falcon: signature cocktails, wijnen, speciaalbieren en mocktails. Dé bar in Arendonk voor afterwork, borrel en events.',
+    title: drinkenContent.seo.title,
+    description: drinkenContent.seo.description,
     path: '/drinken',
   })
 
@@ -57,13 +57,12 @@ export function DrinkenPage() {
       {/* Signature Cocktails */}
       <Section
         id="bartenders-choice"
-        title="Bartenders Choice"
-        subtitle="Handgemaakte signature cocktails door onze bartenders. Van klassiekers tot creatieve creaties — elk drankje vertelt een verhaal."
+        title={drinkenContent.bartendersChoice.title}
+        subtitle={drinkenContent.bartendersChoice.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Op zoek naar de beste cocktails in Arendonk? Onze bartenders mixen met premium spirits,
-          verse ingrediënten en een verfijnde afwerking die je proefnotities lang bijblijven.
+          {drinkenContent.bartendersChoice.intro}
         </p>
         <CardGrid columns={4}>
           <Card
@@ -98,13 +97,12 @@ export function DrinkenPage() {
       {/* Cocktail Menu */}
       <Section
         id="cocktail-menu"
-        title="Cocktail Menu"
-        subtitle="Van signature creaties tot tijdloze classics — en mocktails voor wie liever zonder alcohol geniet."
+        title={drinkenContent.cocktailMenu.title}
+        subtitle={drinkenContent.cocktailMenu.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Van een perfecte Espresso Martini tot een frisse Mojito Royale: ons cocktailmenu biedt voor elk moment
-          de juiste sfeer, inclusief stijlvolle mocktails voor een alcoholvrije avond.
+          {drinkenContent.cocktailMenu.intro}
         </p>
         <DrinkMenuBlock categories={menuData.cocktails.categories} />
       </Section>
@@ -112,13 +110,12 @@ export function DrinkenPage() {
       {/* Wine Menu */}
       <Section
         id="wine-menu"
-        title="Wijnen"
-        subtitle="Een zorgvuldig geselecteerde wijnkaart — per glas of per fles. Van fris en fruitig tot rijk en complex."
+        title={drinkenContent.wineMenu.title}
+        subtitle={drinkenContent.wineMenu.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Onze wijnkaart combineert toegankelijke klassiekers met verrassende ontdekkingen. Ideaal om te combineren
-          met steak, pasta of bar bites tijdens je diner in Arendonk.
+          {drinkenContent.wineMenu.intro}
         </p>
         <DrinkMenuBlock categories={menuData.wines.categories} />
       </Section>
@@ -128,13 +125,12 @@ export function DrinkenPage() {
       {/* Beer Menu */}
       <Section
         id="beer-menu"
-        title="Bieren"
-        subtitle="Belgische trots: van verfrissende pils tot krachtige trappisten. Van tap of fles."
+        title={drinkenContent.beerMenu.title}
+        subtitle={drinkenContent.beerMenu.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Proef de beste Belgische bieren in Arendonk, van frisse pils tot karaktervolle trappisten en specials.
-          Perfect voor afterwork, live sports of een gezellige avond uit.
+          {drinkenContent.beerMenu.intro}
         </p>
         <DrinkMenuBlock categories={menuData.beers.categories} />
       </Section>
@@ -142,13 +138,12 @@ export function DrinkenPage() {
       {/* Bar Gallery */}
       <Section
         id="gallery"
-        title="Bar Sfeer"
-        subtitle="Een kijkje achter de bar — waar de magie gebeurt."
+        title={drinkenContent.gallery.title}
+        subtitle={drinkenContent.gallery.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Van sfeervolle verlichting tot ambachtelijke cocktails: onze bar in Arendonk is de perfecte setting
-          voor een date night, afterwork of weekend vibes.
+          {drinkenContent.gallery.intro}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -179,22 +174,16 @@ export function DrinkenPage() {
       {/* Desserts */}
       <Section
         id="zoet"
-        title="Zoetigheden"
-        subtitle="De perfecte afsluiter: huisgemaakt gebak bij je koffie of als dessert."
+        title={drinkenContent.sweets.title}
+        subtitle={drinkenContent.sweets.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Sluit je avond in Arendonk af met een klassiek dessert of huisgemaakt gebak, perfect te combineren
-          met koffie, digestief of een zoete cocktail.
+          {drinkenContent.sweets.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { name: 'New York Cheesecake', desc: 'Romig, licht en onweerstaanbaar', price: '€ 8' },
-              { name: 'Chocolate Brownie', desc: 'Warm geserveerd met vanille-ijs', price: '€ 8' },
-              { name: 'Tiramisu', desc: 'Huisgemaakt, met mascarpone en espresso', price: '€ 9' },
-              { name: 'Crème Brûlée', desc: 'Klassiek Frans, met knapperige suikerlaag', price: '€ 8' },
-            ].map((dessert) => (
+            {drinkenContent.sweets.items.map((dessert) => (
               <div key={dessert.name} className="text-center">
                 <h4 className="text-[var(--foreground)] font-medium">{dessert.name}</h4>
                 <p className="text-xs text-[var(--muted-foreground)] mt-1">{dessert.desc}</p>

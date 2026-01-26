@@ -4,6 +4,7 @@ import { Section } from '../components/Section'
 import { ParallaxSection } from '../components/ParallaxSection'
 import { useSeo } from '../useSeo'
 import { useState } from 'react'
+import entertainmentContent from '../../../content/pages/entertainment.json'
 
 // Solid Icons
 function CheckIcon() {
@@ -30,86 +31,19 @@ function UserIcon() {
   )
 }
 
-// Game Rules Data
-const gameRules = {
-  snooker: {
-    title: 'Snooker',
-    intro: 'Snooker is een precisie-biljartspel met 22 ballen op een grote tafel.',
-    rules: [
-      'Pot eerst een rode bal (1 punt), daarna een gekleurde',
-      'Gekleurde ballen: geel (2), groen (3), bruin (4), blauw (5), roze (6), zwart (7)',
-      'Na elke gekleurde bal worden ze teruggeplaatst tot alle rode ballen op zijn',
-      'Fout = minimaal 4 punten naar tegenstander',
-      'Hoogste break mogelijk: 147 (maximum break)',
-      'Frame gewonnen door meeste punten'
-    ],
-    tips: [
-      'Gebruik krijt voor elke stoot',
-      'Neem je tijd voor positiespel',
-      'Oefen safety shots'
-    ]
-  },
-  biljart: {
-    title: 'Pool Biljart (8-ball)',
-    intro: 'Pool is het meest populaire biljartspel ter wereld.',
-    rules: [
-      'Één speler speelt volle ballen (1-7), de ander halve (9-15)',
-      'Break bepaalt wie welke groep speelt (eerste gepotte bal)',
-      'Pot al je ballen en daarna de 8-bal om te winnen',
-      'Pot je de 8-bal te vroeg = verlies',
-      'Bij fout mag tegenstander de witte bal vrij plaatsen',
-      'Noem je pocket voor de 8-bal'
-    ],
-    tips: [
-      'Denk vooruit: positioneer voor volgende bal',
-      'Leer de bridge goed vasthouden',
-      'Oefen je break'
-    ]
-  },
-  darts: {
-    title: 'Darts (501)',
-    intro: '501 is het klassieke dartsspel voor competitie.',
-    rules: [
-      'Start met 501 punten, werk naar exact 0',
-      'Moet eindigen op een dubbel (buitenste ring)',
-      '3 pijlen per beurt',
-      'Triple 20 = 60 punten (hoogste score per pijl)',
-      'Bullseye = 50 punten, outer bull = 25',
-      'Score boven 0 of miss op dubbel = beurt ongeldig'
-    ],
-    tips: [
-      'Mik op triple 20 voor snelle score',
-      'Leer je outs: 32, 40, 36 zijn makkelijke finishes',
-      'Consistent gooien is belangrijker dan hard'
-    ]
-  },
-  fifa: {
-    title: 'FIFA',
-    intro: 'Het ultieme voetbalspel op de PlayStation.',
-    rules: [
-      'Wedstrijden van 6 minuten (2x 3 min)',
-      'Geen pauzeren tijdens online play',
-      'Bij gelijkspel: verlenging of penalty\'s',
-      'Fair play: geen rage quitting',
-      'Toernooien: knock-out systeem',
-      'Ranking wordt bijgehouden op ons bord'
-    ],
-    tips: [
-      'Leer skill moves voor betere controle',
-      'Gebruik L1/LB voor getimede runs',
-      'Verdedig met CDM, niet met CB'
-    ]
-  }
-}
+type GameRule = (typeof entertainmentContent.gameRules)[number]
+const gameRules = entertainmentContent.gameRules.reduce<Record<string, GameRule>>((acc, game) => {
+  acc[game.key] = game
+  return acc
+}, {})
 
 export function EntertainmentPage() {
-  const [selectedGame, setSelectedGame] = useState<keyof typeof gameRules>('snooker')
+  const [selectedGame, setSelectedGame] = useState<keyof typeof gameRules>(entertainmentContent.gameRules[0].key)
   const [memberFormOpen, setMemberFormOpen] = useState(false)
 
   useSeo({
-    title: 'Entertainment: snooker, biljart, darts & FIFA',
-    description:
-      'Entertainment bij The Royal Falcon in Arendonk: snooker, biljart, darts en FIFA. Combineer games met cocktails en bar bites voor een complete avond.',
+    title: entertainmentContent.seo.title,
+    description: entertainmentContent.seo.description,
     path: '/entertainment',
   })
 
@@ -118,13 +52,12 @@ export function EntertainmentPage() {
       {/* Games Intro */}
       <Section
         id="games"
-        title="Games & Entertainment"
-        subtitle="Meer dan een restaurant, meer dan een bar. Bij The Royal Falcon combineer je lekker eten en drinken met entertainment."
+        title={entertainmentContent.games.title}
+        subtitle={entertainmentContent.games.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Op zoek naar entertainment in Arendonk? Speel snooker, pool, darts of FIFA in een stijlvolle setting
-          en combineer je game night met cocktails, bar bites en live sports op groot scherm.
+          {entertainmentContent.games.intro}
         </p>
         <CardGrid columns={4}>
           <Card
@@ -159,13 +92,12 @@ export function EntertainmentPage() {
       {/* Game Rules Section */}
       <Section
         id="spelregels"
-        title="Spelregels"
-        subtitle="Ken de regels, speel met stijl. Selecteer een spel voor de officiële regels en tips."
+        title={entertainmentContent.rules.title}
+        subtitle={entertainmentContent.rules.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Of je nu beginner bent of ervaren speler, onze spelregels helpen je om het meeste uit je avond te halen.
-          Perfect voor groepen, vrienden en bedrijven die op zoek zijn naar teambuilding in Arendonk.
+          {entertainmentContent.rules.intro}
         </p>
         {/* Game Selector Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -233,69 +165,60 @@ export function EntertainmentPage() {
       {/* Pricing & Booking */}
       <Section
         id="pricing"
-        title="Tarieven & Reserveren"
-        subtitle="Wil je zeker zijn van een tafel? Reserveer vooraf, vooral in het weekend."
+        title={entertainmentContent.pricing.title}
+        subtitle={entertainmentContent.pricing.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Bekijk onze transparante tarieven voor snooker en biljart in Arendonk. Reserveren is aanbevolen
-          voor drukke avonden, zodat je gegarandeerd een tafel hebt.
+          {entertainmentContent.pricing.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h3 className="text-2xl tracking-wider">Tarieven</h3>
               <ul className="mt-6 space-y-4">
-                <li className="flex justify-between items-start border-b border-[var(--border)] pb-3">
-                  <div>
-                    <span className="text-[var(--foreground)] font-medium">Snooker</span>
-                    <p className="text-sm text-[var(--muted-foreground)]">Per uur, per tafel</p>
-                  </div>
-                  <span className="text-[var(--primary)] font-semibold text-lg">€ 12</span>
-                </li>
-                <li className="flex justify-between items-start border-b border-[var(--border)] pb-3">
-                  <div>
-                    <span className="text-[var(--foreground)] font-medium">Biljart</span>
-                    <p className="text-sm text-[var(--muted-foreground)]">Per uur, per tafel</p>
-                  </div>
-                  <span className="text-[var(--primary)] font-semibold text-lg">€ 8</span>
-                </li>
-                <li className="flex justify-between items-start border-b border-[var(--border)] pb-3">
-                  <div>
-                    <span className="text-[var(--foreground)] font-medium">Darts</span>
-                    <p className="text-sm text-[var(--muted-foreground)]">Gratis bij consumptie</p>
-                  </div>
-                  <span className="text-[var(--secondary)] font-semibold text-lg">Gratis</span>
-                </li>
-                <li className="flex justify-between items-start">
-                  <div>
-                    <span className="text-[var(--foreground)] font-medium">FIFA</span>
-                    <p className="text-sm text-[var(--muted-foreground)]">Gratis bij consumptie</p>
-                  </div>
-                  <span className="text-[var(--secondary)] font-semibold text-lg">Gratis</span>
-                </li>
+                {entertainmentContent.pricing.items.map((item, index) => (
+                  <li
+                    key={item.name}
+                    className={`flex justify-between items-start ${
+                      index < entertainmentContent.pricing.items.length - 1
+                        ? 'border-b border-[var(--border)] pb-3'
+                        : ''
+                    }`}
+                  >
+                    <div>
+                      <span className="text-[var(--foreground)] font-medium">{item.name}</span>
+                      <p className="text-sm text-[var(--muted-foreground)]">{item.note}</p>
+                    </div>
+                    <span
+                      className={`font-semibold text-lg ${
+                        item.accent === 'secondary' ? 'text-[var(--secondary)]' : 'text-[var(--primary)]'
+                      }`}
+                    >
+                      {item.price}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-2xl tracking-wider">Reserveren</h3>
+              <h3 className="text-2xl tracking-wider">{entertainmentContent.pricing.bookingTitle}</h3>
               <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
-                Wil je zeker zijn van je snooker- of biljarttafel? Reserveer eenvoudig via WhatsApp of bel ons. 
-                Voor grotere groepen of toernooien maken we graag een arrangement op maat.
+                {entertainmentContent.pricing.bookingIntro}
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
-                <a
-                  className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
-                  href="https://wa.me/32468303077"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                  <span aria-hidden>→</span>
-                </a>
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href="/contact">
-                  Contact
-                  <span aria-hidden>→</span>
-                </a>
+                {entertainmentContent.pricing.bookingCtas.map((cta) => (
+                  <a
+                    key={cta.label}
+                    className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
+                    href={cta.href}
+                    target={cta.href.startsWith('http') ? '_blank' : undefined}
+                    rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {cta.label}
+                    <span aria-hidden>→</span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -307,13 +230,12 @@ export function EntertainmentPage() {
       {/* SV Valkenhof Club Section */}
       <Section
         id="sv-valkenhof"
-        title="SV Valkenhof"
-        subtitle="Word lid van de snooker- en biljartclub van Arendonk!"
+        title={entertainmentContent.club.title}
+        subtitle={entertainmentContent.club.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          SV Valkenhof is de lokale club voor snooker en biljart in Arendonk. Train, speel competitie
-          en ontmoet andere liefhebbers in een gezellige, professionele omgeving.
+          {entertainmentContent.club.intro}
         </p>
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Club Info */}
@@ -326,44 +248,28 @@ export function EntertainmentPage() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <h3 className="text-2xl tracking-wider">Over de Club</h3>
+              <h3 className="text-2xl tracking-wider">{entertainmentContent.club.aboutTitle}</h3>
               <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
-                SV Valkenhof is dé snooker- en biljartclub van Arendonk. Wij spelen onze competities 
-                en trainingen bij The Royal Falcon. Of je nu beginner bent of gevorderd, 
-                je bent welkom bij onze gezellige club!
+                {entertainmentContent.club.aboutText}
               </p>
               
-              <h4 className="text-lg text-[var(--primary)] mt-6 mb-3">Lidmaatschap voordelen</h4>
+              <h4 className="text-lg text-[var(--primary)] mt-6 mb-3">{entertainmentContent.club.benefitsTitle}</h4>
               <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Gereduceerde speeltarieven
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Toegang tot clubcompetities
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Gratis trainingsavonden
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Deelname aan toernooien
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Clubuitjes en events
-                </li>
+                {entertainmentContent.club.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-center gap-3">
+                    <CheckIcon />
+                    {benefit}
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-6 p-4 bg-[var(--muted)] rounded-lg">
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-[var(--foreground)] font-medium">Jaarlijks lidgeld</span>
-                    <p className="text-xs text-[var(--muted-foreground)]">Inclusief alle voordelen</p>
+                    <span className="text-[var(--foreground)] font-medium">{entertainmentContent.club.feeLabel}</span>
+                    <p className="text-xs text-[var(--muted-foreground)]">{entertainmentContent.club.feeNote}</p>
                   </div>
-                  <span className="text-[var(--primary)] font-bold text-2xl">€ 75</span>
+                  <span className="text-[var(--primary)] font-bold text-2xl">{entertainmentContent.club.feeAmount}</span>
                 </div>
               </div>
             </div>
@@ -371,7 +277,7 @@ export function EntertainmentPage() {
 
           {/* Membership Form */}
           <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
-            <h3 className="text-2xl tracking-wider mb-6">Word Lid</h3>
+            <h3 className="text-2xl tracking-wider mb-6">{entertainmentContent.club.memberFormTitle}</h3>
             
             {!memberFormOpen ? (
               <div className="text-center py-8">
@@ -379,13 +285,13 @@ export function EntertainmentPage() {
                   <UserIcon />
                 </div>
                 <p className="text-[var(--muted-foreground)] mb-6">
-                  Klaar om lid te worden van SV Valkenhof? Vul het formulier in en we nemen contact met je op!
+                  {entertainmentContent.club.memberFormIntro}
                 </p>
                 <button 
                   onClick={() => setMemberFormOpen(true)}
                   className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
                 >
-                  Aanmelden
+                  {entertainmentContent.club.memberFormCta}
                   <span aria-hidden>→</span>
                 </button>
               </div>
@@ -465,20 +371,14 @@ export function EntertainmentPage() {
 
             {/* Club Schedule */}
             <div className="mt-8 pt-8 border-t border-[var(--border)]">
-              <h4 className="text-lg text-[var(--primary)] mb-4">Clubavonden</h4>
+              <h4 className="text-lg text-[var(--primary)] mb-4">{entertainmentContent.club.scheduleTitle}</h4>
               <ul className="space-y-3 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-[var(--muted-foreground)]">Dinsdag</span>
-                  <span className="text-[var(--foreground)]">19:00 - 23:00 (Training)</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[var(--muted-foreground)]">Donderdag</span>
-                  <span className="text-[var(--foreground)]">19:00 - 23:00 (Competitie)</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[var(--muted-foreground)]">Zondag</span>
-                  <span className="text-[var(--foreground)]">14:00 - 18:00 (Vrij spel)</span>
-                </li>
+                {entertainmentContent.club.schedule.map((slot) => (
+                  <li key={slot.day} className="flex justify-between">
+                    <span className="text-[var(--muted-foreground)]">{slot.day}</span>
+                    <span className="text-[var(--foreground)]">{slot.time}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

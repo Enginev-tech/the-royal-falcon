@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "Over ons – The Royal Falcon Arendonk",
+    "description": "The Royal Falcon in Arendonk: restaurant, bar en entertainment onder één dak. Ontdek ons verhaal, leer het team kennen en ervaar onze unieke sfeer."
+  },
+  "about": {
+    "title": "Ons Verhaal",
+    "subtitle": "The Royal Falcon is meer dan een restaurant — het is een plek waar eten, drinken en entertainment samenkomen tot één beleving.",
+    "intro": "In het hart van Arendonk bouwen we elke dag aan een warme plek voor locals en bezoekers. Van culinair dineren tot live sport en ontspanning: The Royal Falcon is jouw vaste adres.",
+    "story": [
+      "In het hart van Arendonk, aan De Valken 11, vind je The Royal Falcon — een plek waar je terecht kunt voor alles. Of je nu komt voor een uitgebreid diner, een snelle lunch, een cocktailavond met vrienden of een potje snooker: wij hebben het allemaal onder één dak.",
+      "Onze keuken serveert van signature steaks tot verse salades, van huisgemaakte pasta tot kindvriendelijke gerechten. Aan de bar vind je handgemaakte cocktails, een zorgvuldig geselecteerde wijnkaart en de beste Belgische bieren.",
+      "Maar wat ons écht uniek maakt? De combinatie met entertainment. Na je diner schuif je door naar een potje snooker, daag je vrienden uit bij darts of blijf je hangen voor live sports op groot scherm. Dat is The Royal Falcon."
+    ]
+  },
+  "values": {
+    "title": "Waar We Voor Staan",
+    "subtitle": "De pijlers van The Royal Falcon — wat ons drijft en wat je mag verwachten.",
+    "intro": "Gastvrijheid, kwaliteit en beleving vormen de basis van onze service. We streven ernaar om elke gast in Arendonk een onvergetelijke avond uit te bezorgen.",
+    "items": [
+      {
+        "icon": "quality",
+        "title": "Kwaliteit",
+        "desc": "Verse ingrediënten, met zorg bereid. Van steak tot cocktail — alles is van topkwaliteit."
+      },
+      {
+        "icon": "heart",
+        "title": "Gastvrijheid",
+        "desc": "Een warm welkom voor iedereen. Of je nu alleen komt of met een groep — je bent thuis."
+      },
+      {
+        "icon": "game",
+        "title": "Beleving",
+        "desc": "Meer dan eten en drinken. Entertainment, events en sfeer maken je bezoek compleet."
+      },
+      {
+        "icon": "community",
+        "title": "Community",
+        "desc": "Verbonden met Arendonk. Van lokale clubs tot vaste gasten — we zijn er voor iedereen."
+      }
+    ]
+  },
+  "location": {
+    "title": "Waar Je Ons Vindt",
+    "subtitle": "Centraal gelegen in Arendonk, met ruime parking vlakbij.",
+    "intro": "The Royal Falcon ligt centraal in Arendonk en is ideaal voor een avond uit met familie, vrienden of collega’s. Plan je bezoek en combineer diner, bar en entertainment op één locatie."
+  }
+}

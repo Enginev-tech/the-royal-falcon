@@ -2,6 +2,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { TeamSection } from '../components/TeamSection'
 import { useSeo } from '../useSeo'
+import overOnsContent from '../../../content/pages/over-ons.json'
 
 // Solid Icons
 function QualityIcon() {
@@ -39,45 +40,37 @@ function CommunityIcon() {
 
 export function OverOnsPage() {
   useSeo({
-    title: 'Over ons – The Royal Falcon Arendonk',
-    description:
-      'The Royal Falcon in Arendonk: restaurant, bar en entertainment onder één dak. Ontdek ons verhaal, leer het team kennen en ervaar onze unieke sfeer.',
+    title: overOnsContent.seo.title,
+    description: overOnsContent.seo.description,
     path: '/over-ons',
   })
+
+  const valueIconMap: Record<string, JSX.Element> = {
+    quality: <QualityIcon />,
+    heart: <HeartIcon />,
+    game: <GameIcon />,
+    community: <CommunityIcon />,
+  }
 
   return (
     <div>
       {/* About Section */}
       <Section
         id="about"
-        title="Ons Verhaal"
-        subtitle="The Royal Falcon is meer dan een restaurant — het is een plek waar eten, drinken en entertainment samenkomen tot één beleving."
+        title={overOnsContent.about.title}
+        subtitle={overOnsContent.about.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          In het hart van Arendonk bouwen we elke dag aan een warme plek voor locals en bezoekers.
-          Van culinair dineren tot live sport en ontspanning: The Royal Falcon is jouw vaste adres.
+          {overOnsContent.about.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div>
               <article className="space-y-4 text-[var(--muted-foreground)] leading-relaxed">
-                <p>
-                  In het hart van Arendonk, aan De Valken 11, vind je The Royal Falcon — een plek 
-                  waar je terecht kunt voor alles. Of je nu komt voor een uitgebreid diner, een 
-                  snelle lunch, een cocktailavond met vrienden of een potje snooker: wij hebben 
-                  het allemaal onder één dak.
-                </p>
-                <p>
-                  Onze keuken serveert van signature steaks tot verse salades, van huisgemaakte 
-                  pasta tot kindvriendelijke gerechten. Aan de bar vind je handgemaakte cocktails, 
-                  een zorgvuldig geselecteerde wijnkaart en de beste Belgische bieren.
-                </p>
-                <p>
-                  Maar wat ons écht uniek maakt? De combinatie met entertainment. Na je diner 
-                  schuif je door naar een potje snooker, daag je vrienden uit bij darts of 
-                  blijf je hangen voor live sports op groot scherm. Dat is The Royal Falcon.
-                </p>
+                {overOnsContent.about.story.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </article>
             </div>
             <div className="relative">
@@ -97,39 +90,17 @@ export function OverOnsPage() {
       {/* Values */}
       <Section
         id="values"
-        title="Waar We Voor Staan"
-        subtitle="De pijlers van The Royal Falcon — wat ons drijft en wat je mag verwachten."
+        title={overOnsContent.values.title}
+        subtitle={overOnsContent.values.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Gastvrijheid, kwaliteit en beleving vormen de basis van onze service. We streven ernaar om elke gast
-          in Arendonk een onvergetelijke avond uit te bezorgen.
+          {overOnsContent.values.intro}
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: <QualityIcon />,
-              title: 'Kwaliteit',
-              desc: 'Verse ingrediënten, met zorg bereid. Van steak tot cocktail — alles is van topkwaliteit.',
-            },
-            {
-              icon: <HeartIcon />,
-              title: 'Gastvrijheid',
-              desc: 'Een warm welkom voor iedereen. Of je nu alleen komt of met een groep — je bent thuis.',
-            },
-            {
-              icon: <GameIcon />,
-              title: 'Beleving',
-              desc: 'Meer dan eten en drinken. Entertainment, events en sfeer maken je bezoek compleet.',
-            },
-            {
-              icon: <CommunityIcon />,
-              title: 'Community',
-              desc: 'Verbonden met Arendonk. Van lokale clubs tot vaste gasten — we zijn er voor iedereen.',
-            },
-          ].map((value) => (
+          {overOnsContent.values.items.map((value) => (
             <div key={value.title} className="glass-card rounded-[var(--radius-card)] p-6 text-center">
-              <div className="flex justify-center mb-4">{value.icon}</div>
+              <div className="flex justify-center mb-4">{valueIconMap[value.icon]}</div>
               <h3 className="text-xl tracking-wider">{value.title}</h3>
               <p className="text-sm text-[var(--muted-foreground)] mt-3 leading-relaxed">{value.desc}</p>
             </div>
@@ -145,13 +116,12 @@ export function OverOnsPage() {
       {/* Location */}
       <Section
         id="location"
-        title="Waar Je Ons Vindt"
-        subtitle="Centraal gelegen in Arendonk, met ruime parking vlakbij."
+        title={overOnsContent.location.title}
+        subtitle={overOnsContent.location.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          The Royal Falcon ligt centraal in Arendonk en is ideaal voor een avond uit met familie, vrienden of collega’s.
-          Plan je bezoek en combineer diner, bar en entertainment op één locatie.
+          {overOnsContent.location.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">

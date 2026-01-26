@@ -1,0 +1,50 @@
+{
+  "seo": {
+    "title": "Eten in Arendonk – lunch, diner & chef specials",
+    "description": "Eten bij The Royal Falcon in Arendonk: chef specials, lunchmenu, dinermenu, kids menu en borrel menu. Combineer met cocktails en reserveer je tafel."
+  },
+  "chefSpecials": {
+    "title": "Chef Specials",
+    "subtitle": "Onze signature gerechten — seizoensgebonden specials met een Royal Falcon twist. Perfect voor een culinaire avond uit in Arendonk.",
+    "intro": "Proef de meest populaire gerechten van Arendonk met lokale seizoensproducten en een moderne twist. Onze chef specials combineren klassieke smaken met creatieve presentaties — ideaal voor foodies en levensgenieters."
+  },
+  "lunch": {
+    "title": "Lunch Menu",
+    "subtitle": "Lunchen in Arendonk? Van snelle broodjes tot verwarmende soepen — onze lunchkaart heeft voor elk wat wils. Geserveerd van 12:00 tot 15:00.",
+    "intro": "Zoek je een snelle lunch in Arendonk of liever uitgebreid tafelen? Onze lunchkaart biedt frisse salades, artisanale broodjes en huisgemaakte soepen, perfect voor een zakelijke afspraak of een gezellige pauze."
+  },
+  "diner": {
+    "title": "Diner Menu",
+    "subtitle": "Diner in Arendonk met sfeer en smaak. Van sappige steaks tot verse pasta — onze keuken draait vanaf 17:00.",
+    "intro": "Geniet van een sfeervol diner in Arendonk met onze signature steaks, pasta’s en seizoensgerechten. We werken met verse ingrediënten en serveren elk gerecht met zorg en gastvrijheid."
+  },
+  "kids": {
+    "title": "Kids Menu",
+    "subtitle": "Voor onze kleine gasten tot 12 jaar. Kindvriendelijke gerechten die ook de ouders goedkeuren.",
+    "intro": "Ook voor gezinnen is The Royal Falcon een topadres. Het kids menu bevat herkenbare favorieten, zodat kinderen en ouders allebei ontspannen kunnen genieten van een lunch of diner."
+  },
+  "borrel": {
+    "title": "Bar Bites",
+    "subtitle": "Snacks en platters voor bij je cocktail. Ideaal tijdens een potje snooker, een avond met vrienden of gewoon omdat het kan.",
+    "intro": "Deelbare bar bites maken elke avond compleet. Kies uit borrelplanken, warme snacks en kleine gerechten die perfect passen bij cocktails, speciaalbier of een goed glas wijn."
+  },
+  "reservation": {
+    "title": "Reserveer je tafel",
+    "subtitle": "Zeker zijn van je plekje? Reserveer eenvoudig via WhatsApp of mail.",
+    "cardTitle": "Boek een tafel",
+    "cardIntro": "Of je nu komt voor een uitgebreid diner, een snelle lunch of gewoon wat hapjes bij je cocktail — we maken graag een plekje vrij. Voor grotere gezelschappen of events neem je best even contact op.",
+    "bullets": [
+      "Lunch: 12:00 – 15:00 (weekend)",
+      "Diner: vanaf 17:00",
+      "Bar bites: de hele avond"
+    ],
+    "primaryCta": {
+      "label": "Reserveer nu",
+      "href": "/contact#booking"
+    },
+    "secondaryCta": {
+      "label": "WhatsApp",
+      "href": "https://wa.me/32468303077"
+    }
+  }
+}

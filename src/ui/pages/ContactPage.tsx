@@ -2,6 +2,7 @@ import { Section } from '../components/Section'
 import { ParallaxSection } from '../components/ParallaxSection'
 import { site } from '../content/site'
 import { useSeo } from '../useSeo'
+import contactContent from '../../../content/pages/contact.json'
 
 // Solid Icons
 function WhatsAppIcon() {
@@ -31,9 +32,8 @@ function PhoneIcon() {
 
 export function ContactPage() {
   useSeo({
-    title: 'Contact & reservatie – The Royal Falcon Arendonk',
-    description:
-      'Contacteer The Royal Falcon in Arendonk. Reserveer via WhatsApp of mail. Adres: De Valken 11, 2360 Arendonk.',
+    title: contactContent.seo.title,
+    description: contactContent.seo.description,
     path: '/contact',
   })
 
@@ -42,13 +42,12 @@ export function ContactPage() {
       {/* Contact Info */}
       <Section
         id="contact"
-        title="Neem Contact Op"
-        subtitle="Vragen, reservaties of gewoon even hallo zeggen? We horen graag van je."
+        title={contactContent.contact.title}
+        subtitle={contactContent.contact.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Contact opnemen met The Royal Falcon in Arendonk is eenvoudig via WhatsApp, telefoon of e‑mail.
-          We antwoorden snel op reservaties, vragen over events en groepsaanvragen.
+          {contactContent.contact.intro}
         </p>
         <div className="grid gap-6 lg:grid-cols-3">
           {/* WhatsApp */}
@@ -99,36 +98,35 @@ export function ContactPage() {
       {/* Address & Hours */}
       <Section
         id="adres"
-        title="Bezoek Ons"
-        subtitle="Centraal gelegen in Arendonk, met ruime parking in de buurt."
+        title={contactContent.visit.title}
+        subtitle={contactContent.visit.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Plan je route naar The Royal Falcon in Arendonk en geniet van een ontspannen avond uit.
-          Dankzij de centrale ligging is ons restaurant makkelijk bereikbaar met auto of fiets.
+          {contactContent.visit.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl tracking-wider">Adres</h3>
+              <h3 className="text-2xl tracking-wider">{contactContent.visit.addressTitle}</h3>
               <address className="not-italic mt-4 space-y-1 text-[var(--muted-foreground)]">
                 <p className="text-[var(--foreground)] font-medium text-lg">The Royal Falcon</p>
                 <p>{site.address}</p>
               </address>
               <div className="mt-6">
                 <a
-                  href="https://maps.google.com/?q=De+Valken+11+2360+Arendonk+Belgium"
+                  href={contactContent.visit.mapCtaHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
                 >
-                  Bekijk op Google Maps
+                  {contactContent.visit.mapCtaLabel}
                   <span aria-hidden>→</span>
                 </a>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl tracking-wider">Openingstijden</h3>
+              <h3 className="text-2xl tracking-wider">{contactContent.visit.hoursTitle}</h3>
               <ul className="mt-4 space-y-3">
                 <li className="flex justify-between border-b border-[var(--border)] pb-2">
                   <span className="text-[var(--muted-foreground)]">Maandag</span>
@@ -159,13 +157,12 @@ export function ContactPage() {
       {/* Reservation Form */}
       <Section
         id="booking"
-        title="Reserveer Je Tafel"
-        subtitle="Zeker zijn van je plekje? Vul het formulier in en we nemen snel contact op."
+        title={contactContent.booking.title}
+        subtitle={contactContent.booking.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Reserveer je tafel in Arendonk voor lunch, diner of een avond met live sport. We bevestigen je aanvraag
-          zo snel mogelijk zodat je zorgeloos kunt genieten.
+          {contactContent.booking.intro}
         </p>
         <div className="glass-card form-card-light rounded-[var(--radius-card)] p-8 md:p-10 max-w-3xl mx-auto">
           <form className="space-y-8">

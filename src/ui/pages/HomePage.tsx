@@ -3,6 +3,7 @@ import { CardGrid } from '../components/CardGrid'
 import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { useSeo } from '../useSeo'
+import homeContent from '../../../content/pages/home.json'
 
 // Solid Icon for bullet points
 function CheckIcon() {
@@ -15,9 +16,8 @@ function CheckIcon() {
 
 export function HomePage() {
   useSeo({
-    title: 'Restaurant, bar & entertainment in Arendonk',
-    description:
-      'The Royal Falcon in Arendonk: restaurant, cocktails en entertainment (snooker, biljart, darts). Reserveer een tafel of ontdek onze events en live sports.',
+    title: homeContent.seo.title,
+    description: homeContent.seo.description,
     path: '/',
   })
 
@@ -26,8 +26,8 @@ export function HomePage() {
       {/* Main Event - Featured Card with Image */}
       <Section
         id="main-event"
-        title="Main Event"
-        subtitle="Beleef een avond uit in Arendonk met chef specials, signature cocktails en entertainment."
+        title={homeContent.mainEvent.sectionTitle}
+        subtitle={homeContent.mainEvent.sectionSubtitle}
         variant="decorated"
       >
         <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
@@ -42,30 +42,28 @@ export function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="inline-block px-3 py-1 bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-medium tracking-wider rounded">
-                  ELKE VRIJDAG & ZATERDAG
+                  {homeContent.mainEvent.badge}
                 </span>
               </div>
             </div>
             {/* Content */}
             <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl tracking-wider">Royal Night</h3>
+              <h3 className="text-2xl md:text-3xl tracking-wider">{homeContent.mainEvent.cardTitle}</h3>
               <p className="mt-3 text-[var(--muted-foreground)] leading-relaxed">
-                Live entertainment, cocktails en specials - ideaal voor een avond met vrienden of collega's. 
-                Van casual borrel tot main event: dit is The Royal Falcon.
+                {homeContent.mainEvent.cardDescription}
               </p>
               <ul className="mt-6 space-y-3 text-sm text-[var(--muted-foreground)]">
-                <li className="flex items-center gap-3"><CheckIcon />Snooker, biljart, darts & FIFA</li>
-                <li className="flex items-center gap-3"><CheckIcon />Signature cocktails & bar bites</li>
-                <li className="flex items-center gap-3"><CheckIcon />Live sports op groot scherm</li>
-                <li className="flex items-center gap-3"><CheckIcon />Events & feesten op maat</li>
+                {homeContent.mainEvent.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-center gap-3"><CheckIcon />{bullet}</li>
+                ))}
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href="/events">
-                  Bekijk agenda
+                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={homeContent.mainEvent.primaryCta.href}>
+                  {homeContent.mainEvent.primaryCta.label}
                   <span aria-hidden="true">&#8594;</span>
                 </a>
-                <a className="cta-link bg-[var(--muted)] text-[var(--foreground)]" href="/contact#booking">
-                  Reserveer
+                <a className="cta-link bg-[var(--muted)] text-[var(--foreground)]" href={homeContent.mainEvent.secondaryCta.href}>
+                  {homeContent.mainEvent.secondaryCta.label}
                   <span aria-hidden="true">&#8594;</span>
                 </a>
               </div>
@@ -82,13 +80,12 @@ export function HomePage() {
 
       <Section
         id="services"
-        title="Services"
-        subtitle="Alles onder een dak in Arendonk: restaurant, bar, entertainment en events."
+        title={homeContent.services.title}
+        subtitle={homeContent.services.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          The Royal Falcon is de all‑in‑one hotspot in Arendonk: kom eten, drink een cocktail aan de bar
-          en geniet van entertainment zoals snooker en darts. Ideaal voor dates, groepen en bedrijfsuitjes.
+          {homeContent.services.intro}
         </p>
         <CardGrid columns={4}>
           <Card
@@ -144,13 +141,12 @@ export function HomePage() {
 
       <Section
         id="menus"
-        title="Menu's"
-        subtitle="Ontdek ons eten, onze cocktails en bar bites."
+        title={homeContent.menus.title}
+        subtitle={homeContent.menus.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Van lunch en diner tot cocktails en desserts: onze menu’s zijn samengesteld voor elke smaak.
-          Perfect voor een avond uit in Arendonk of een ontspannen borrel met vrienden.
+          {homeContent.menus.intro}
         </p>
         <CardGrid columns={4}>
           <Card

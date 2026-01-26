@@ -4,6 +4,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { useSeo } from '../useSeo'
 import { menuData } from '../content/menus'
+import etenContent from '../../../content/pages/eten.json'
 
 // Solid Icon
 function CheckIcon() {
@@ -65,9 +66,8 @@ function MenuBlock(props: {
 
 export function EtenPage() {
   useSeo({
-    title: 'Eten in Arendonk – lunch, diner & chef specials',
-    description:
-      'Eten bij The Royal Falcon in Arendonk: chef specials, lunchmenu, dinermenu, kids menu en borrel menu. Combineer met cocktails en reserveer je tafel.',
+    title: etenContent.seo.title,
+    description: etenContent.seo.description,
     path: '/eten',
   })
 
@@ -76,13 +76,12 @@ export function EtenPage() {
       {/* Hero section met chef specials */}
       <Section
         id="chef-specials"
-        title="Chef Specials"
-        subtitle="Onze signature gerechten — seizoensgebonden specials met een Royal Falcon twist. Perfect voor een culinaire avond uit in Arendonk."
+        title={etenContent.chefSpecials.title}
+        subtitle={etenContent.chefSpecials.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Proef de meest populaire gerechten van Arendonk met lokale seizoensproducten en een moderne twist.
-          Onze chef specials combineren klassieke smaken met creatieve presentaties — ideaal voor foodies en levensgenieters.
+          {etenContent.chefSpecials.intro}
         </p>
         <CardGrid columns={4}>
           <Card
@@ -117,13 +116,12 @@ export function EtenPage() {
       {/* Lunch Menu */}
       <Section
         id="lunch"
-        title="Lunch Menu"
-        subtitle="Lunchen in Arendonk? Van snelle broodjes tot verwarmende soepen — onze lunchkaart heeft voor elk wat wils. Geserveerd van 12:00 tot 15:00."
+        title={etenContent.lunch.title}
+        subtitle={etenContent.lunch.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Zoek je een snelle lunch in Arendonk of liever uitgebreid tafelen? Onze lunchkaart biedt frisse salades,
-          artisanale broodjes en huisgemaakte soepen, perfect voor een zakelijke afspraak of een gezellige pauze.
+          {etenContent.lunch.intro}
         </p>
         <MenuBlock categories={menuData.lunch.categories} />
       </Section>
@@ -131,13 +129,12 @@ export function EtenPage() {
       {/* Diner Menu */}
       <Section
         id="diner"
-        title="Diner Menu"
-        subtitle="Diner in Arendonk met sfeer en smaak. Van sappige steaks tot verse pasta — onze keuken draait vanaf 17:00."
+        title={etenContent.diner.title}
+        subtitle={etenContent.diner.subtitle}
         variant="muted"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Geniet van een sfeervol diner in Arendonk met onze signature steaks, pasta’s en seizoensgerechten.
-          We werken met verse ingrediënten en serveren elk gerecht met zorg en gastvrijheid.
+          {etenContent.diner.intro}
         </p>
         <MenuBlock categories={menuData.diner.categories} />
       </Section>
@@ -147,13 +144,12 @@ export function EtenPage() {
       {/* Kids Menu */}
       <Section
         id="kids"
-        title="Kids Menu"
-        subtitle="Voor onze kleine gasten tot 12 jaar. Kindvriendelijke gerechten die ook de ouders goedkeuren."
+        title={etenContent.kids.title}
+        subtitle={etenContent.kids.subtitle}
         variant="plain"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Ook voor gezinnen is The Royal Falcon een topadres. Het kids menu bevat herkenbare favorieten,
-          zodat kinderen en ouders allebei ontspannen kunnen genieten van een lunch of diner.
+          {etenContent.kids.intro}
         </p>
         <MenuBlock categories={menuData.kids.categories} />
       </Section>
@@ -161,13 +157,12 @@ export function EtenPage() {
       {/* Bar Bites */}
       <Section
         id="borrel"
-        title="Bar Bites"
-        subtitle="Snacks en platters voor bij je cocktail. Ideaal tijdens een potje snooker, een avond met vrienden of gewoon omdat het kan."
+        title={etenContent.borrel.title}
+        subtitle={etenContent.borrel.subtitle}
         variant="decorated"
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          Deelbare bar bites maken elke avond compleet. Kies uit borrelplanken, warme snacks en kleine gerechten
-          die perfect passen bij cocktails, speciaalbier of een goed glas wijn.
+          {etenContent.borrel.intro}
         </p>
         <MenuBlock categories={menuData.borrel.categories} />
       </Section>
@@ -175,44 +170,37 @@ export function EtenPage() {
       {/* Reservation CTA */}
       <Section
         id="reservation"
-        title="Reserveer je tafel"
-        subtitle="Zeker zijn van je plekje? Reserveer eenvoudig via WhatsApp of mail."
+        title={etenContent.reservation.title}
+        subtitle={etenContent.reservation.subtitle}
         variant="muted"
       >
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl tracking-wider">Boek een tafel</h3>
+              <h3 className="text-2xl tracking-wider">{etenContent.reservation.cardTitle}</h3>
               <p className="mt-3 text-[var(--muted-foreground)] leading-relaxed">
-                Of je nu komt voor een uitgebreid diner, een snelle lunch of gewoon wat hapjes bij je cocktail — 
-                we maken graag een plekje vrij. Voor grotere gezelschappen of events neem je best even contact op.
+                {etenContent.reservation.cardIntro}
               </p>
               <ul className="mt-6 space-y-3 text-sm text-[var(--muted-foreground)]">
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Lunch: 12:00 – 15:00 (weekend)
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Diner: vanaf 17:00
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  Bar bites: de hele avond
-                </li>
+                {etenContent.reservation.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-center gap-3">
+                    <CheckIcon />
+                    {bullet}
+                  </li>
+                ))}
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href="/contact#booking">
-                  Reserveer nu
+                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={etenContent.reservation.primaryCta.href}>
+                  {etenContent.reservation.primaryCta.label}
                   <span aria-hidden>→</span>
                 </a>
                 <a
                   className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
-                  href="https://wa.me/32468303077"
+                  href={etenContent.reservation.secondaryCta.href}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp
+                  {etenContent.reservation.secondaryCta.label}
                   <span aria-hidden>→</span>
                 </a>
               </div>

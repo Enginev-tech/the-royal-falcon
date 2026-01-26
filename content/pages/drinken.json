@@ -1,0 +1,42 @@
+{
+  "seo": {
+    "title": "Cocktails & bar in Arendonk",
+    "description": "Drinken bij The Royal Falcon: signature cocktails, wijnen, speciaalbieren en mocktails. Dé bar in Arendonk voor afterwork, borrel en events."
+  },
+  "bartendersChoice": {
+    "title": "Bartenders Choice",
+    "subtitle": "Handgemaakte signature cocktails door onze bartenders. Van klassiekers tot creatieve creaties — elk drankje vertelt een verhaal.",
+    "intro": "Op zoek naar de beste cocktails in Arendonk? Onze bartenders mixen met premium spirits, verse ingrediënten en een verfijnde afwerking die je proefnotities lang bijblijven."
+  },
+  "cocktailMenu": {
+    "title": "Cocktail Menu",
+    "subtitle": "Van signature creaties tot tijdloze classics — en mocktails voor wie liever zonder alcohol geniet.",
+    "intro": "Van een perfecte Espresso Martini tot een frisse Mojito Royale: ons cocktailmenu biedt voor elk moment de juiste sfeer, inclusief stijlvolle mocktails voor een alcoholvrije avond."
+  },
+  "wineMenu": {
+    "title": "Wijnen",
+    "subtitle": "Een zorgvuldig geselecteerde wijnkaart — per glas of per fles. Van fris en fruitig tot rijk en complex.",
+    "intro": "Onze wijnkaart combineert toegankelijke klassiekers met verrassende ontdekkingen. Ideaal om te combineren met steak, pasta of bar bites tijdens je diner in Arendonk."
+  },
+  "beerMenu": {
+    "title": "Bieren",
+    "subtitle": "Belgische trots: van verfrissende pils tot krachtige trappisten. Van tap of fles.",
+    "intro": "Proef de beste Belgische bieren in Arendonk, van frisse pils tot karaktervolle trappisten en specials. Perfect voor afterwork, live sports of een gezellige avond uit."
+  },
+  "gallery": {
+    "title": "Bar Sfeer",
+    "subtitle": "Een kijkje achter de bar — waar de magie gebeurt.",
+    "intro": "Van sfeervolle verlichting tot ambachtelijke cocktails: onze bar in Arendonk is de perfecte setting voor een date night, afterwork of weekend vibes."
+  },
+  "sweets": {
+    "title": "Zoetigheden",
+    "subtitle": "De perfecte afsluiter: huisgemaakt gebak bij je koffie of als dessert.",
+    "intro": "Sluit je avond in Arendonk af met een klassiek dessert of huisgemaakt gebak, perfect te combineren met koffie, digestief of een zoete cocktail.",
+    "items": [
+      { "name": "New York Cheesecake", "desc": "Romig, licht en onweerstaanbaar", "price": "€ 8" },
+      { "name": "Chocolate Brownie", "desc": "Warm geserveerd met vanille-ijs", "price": "€ 8" },
+      { "name": "Tiramisu", "desc": "Huisgemaakt, met mascarpone en espresso", "price": "€ 9" },
+      { "name": "Crème Brûlée", "desc": "Klassiek Frans, met knapperige suikerlaag", "price": "€ 8" }
+    ]
+  }
+}
