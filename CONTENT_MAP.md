@@ -120,6 +120,12 @@
 - ctaPrimary { label, href }
 - ctaSecondary { label, href }
 
+### SEO (per pagina)
+
+- seoTitle
+- seoDescription
+- ogImage (optioneel)
+
 ### Cards (herbruikbaar)
 
 - title
@@ -128,6 +134,14 @@
 - imageAlt
 - badge (optioneel)
 - footerItems[] (optioneel)
+
+### Media assets (globaal)
+
+- heroVideo
+- parallaxImage
+- cardImage
+- galleryImages[]
+- eventImage
 
 ### Events kalender
 
