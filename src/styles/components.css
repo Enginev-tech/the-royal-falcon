@@ -1,0 +1,86 @@
+/* Component-level theme tokens */
+:root {
+  /* Global tokens (typography/colors/shadows) */
+  --font-base: var(--font-sans);
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --tracking-tight: var(--tracking-tight);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: var(--tracking-wide);
+  --color-text: var(--foreground);
+  --color-text-muted: var(--muted-foreground);
+  --color-text-inverse: var(--primary-foreground);
+  --color-surface: var(--background);
+  --color-surface-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-text: var(--card-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-contrast: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-contrast: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-foreground);
+  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.25);
+  --shadow-card: var(--shadow);
+  --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  /* Images (global) */
+  --image-bg-main: var(--bg-main);
+  --image-bg-section: var(--bg-section);
+  --image-bg-pattern: var(--bg-pattern);
+
+  /* Videos (global) */
+  --video-hero: url('/video/events.mp4');
+  --video-ambient: url('/video/entertainment2.mp4');
+
+  /* Layout: Container */
+  --container-padding-base: 5vw;
+  --container-padding-xl: 8vw;
+  --container-padding-2xl: 10vw;
+  --container-padding-3xl: 12vw;
+
+  /* Layout: Sections - Fluid spacing */
+  --section-padding-base: clamp(3rem, 8vw, 5rem);
+  --section-padding-md: clamp(4rem, 10vw, 7rem);
+  --section-padding-lg: clamp(5rem, 12vw, 9rem);
+
+  /* Component: CTA button/link */
+  --cta-link-bg: var(--primary);
+  --cta-link-fg: var(--primary-foreground);
+  --cta-link-bg-hover: color-mix(in srgb, var(--primary) 90%, transparent);
+  --cta-link-padding-y: 0.5rem;
+  --cta-link-padding-x: 1rem;
+  --cta-link-radius: var(--radius-sm);
+  --cta-link-font-size: 0.875rem;
+  --cta-link-font-weight: 500;
+  --cta-link-transition: 0.2s;
+  --cta-link-icon-size: 1rem;
+
+  /* Component: Icon glow */
+  --icon-glow-blur: 8px;
+  --icon-glow-color: color-mix(in srgb, var(--primary) 40%, transparent);
+
+  /* Component: Glass hover cards */
+  --glass-hover-transition: 0.3s ease;
+  --glass-hover-translate-y: -4px;
+  --glass-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 177, 165, 0.1);
+
+  /* Component: Footer */
+  --footer-bg-image: url('/footer/snooker-small-03.png');
+
+  /* Component: Hero */
+  --hero-bg-image: url('/hero/hero-retrobar.png');
+  --hero-video: var(--video-hero);
+}

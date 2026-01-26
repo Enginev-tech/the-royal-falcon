@@ -1,0 +1,211 @@
+// Menu data for The Royal Falcon
+
+export const menuData = {
+  lunch: {
+    title: 'Lunch',
+    subtitle: 'Geserveerd van 12:00 tot 15:00',
+    categories: [
+      {
+        name: 'Soepen & Salades',
+        items: [
+          { name: 'Soep van de dag', description: 'Met vers brood', price: '€ 8' },
+          { name: 'Tom Kha Gai', description: 'Thaise kokossoep met kip', price: '€ 10' },
+          { name: 'Caesar Salad', description: 'Romaine, parmezaan, croutons, Caesar dressing', price: '€ 14' },
+          { name: 'Salade Niçoise', description: 'Tonijn, ei, olijven, sperziebonen', price: '€ 16' },
+        ],
+      },
+      {
+        name: 'Broodjes & Wraps',
+        items: [
+          { name: 'Falcon Club', description: 'Kip, bacon, tomaat, sla, huissaus', price: '€ 14' },
+          { name: 'Pulled Pork Sandwich', description: 'Langzaam gegaard, coleslaw, BBQ saus', price: '€ 15' },
+          { name: 'Veggie Wrap', description: 'Gegrilde groenten, hummus, feta', price: '€ 13' },
+          { name: 'Steak Sandwich', description: 'Entrecote, rucola, truffelmayo', price: '€ 18' },
+        ],
+      },
+      {
+        name: 'Warme Gerechten',
+        items: [
+          { name: 'Pasta Bolognese', description: 'Huisgemaakte saus, parmezaan', price: '€ 16' },
+          { name: 'Fish & Chips', description: 'Kabeljauw in bierbeslag, friet, tartaar', price: '€ 18' },
+          { name: 'Croque Monsieur', description: 'Ham, kaas, béchamel', price: '€ 12' },
+        ],
+      },
+    ],
+  },
+  diner: {
+    title: 'Diner',
+    subtitle: 'Geserveerd vanaf 17:00',
+    categories: [
+      {
+        name: 'Starters',
+        items: [
+          { name: 'Carpaccio', description: 'Rund, rucola, parmezaan, truffelolie', price: '€ 14' },
+          { name: 'Garnaalkroketten', description: 'Huisgemaakt, citroenmayo', price: '€ 16' },
+          { name: 'Burrata', description: 'Tomaat, basilicum, balsamico', price: '€ 15' },
+          { name: 'Charcuterie Board', description: 'Selectie vleeswaren, cornichons, mosterd', price: '€ 18' },
+        ],
+      },
+      {
+        name: 'Hoofdgerechten',
+        items: [
+          { name: 'Steak Royal', description: 'Entrecote 300g, friet, salade, saus naar keuze', price: '€ 32' },
+          { name: 'Côte à l\'Os', description: '500g, voor 2 personen, seizoensgroenten', price: '€ 65' },
+          { name: 'Zalm Teriyaki', description: 'Gegrilde zalm, rijst, wokgroenten', price: '€ 26' },
+          { name: 'Pasta Frutti di Mare', description: 'Verse zeevruchten, tomaat, witte wijn', price: '€ 28' },
+          { name: 'Spareribs', description: 'Full rack, BBQ saus, coleslaw, friet', price: '€ 26' },
+          { name: 'Vegetarische Risotto', description: 'Seizoensgroenten, parmezaan', price: '€ 22' },
+        ],
+      },
+      {
+        name: 'Burgers',
+        items: [
+          { name: 'Classic Burger', description: 'Rund, cheddar, bacon, friet', price: '€ 18' },
+          { name: 'Falcon Burger', description: 'Dubbel rund, jalapeño, BBQ, onion rings', price: '€ 22' },
+          { name: 'Chicken Burger', description: 'Krokante kip, sla, mayo', price: '€ 17' },
+        ],
+      },
+    ],
+  },
+  kids: {
+    title: 'Kids Menu',
+    subtitle: 'Voor onze kleine gasten (tot 12 jaar)',
+    categories: [
+      {
+        name: 'Kindermenu',
+        items: [
+          { name: 'Kipnuggets', description: 'Met frietjes en appelmoes', price: '€ 12' },
+          { name: 'Mini Pasta', description: 'Bolognese of kaassaus', price: '€ 10' },
+          { name: 'Pannenkoek', description: 'Met suiker of Nutella', price: '€ 8' },
+          { name: 'Kids Burger', description: 'Mini burger met frietjes', price: '€ 12' },
+        ],
+      },
+    ],
+  },
+  borrel: {
+    title: 'Bar Bites',
+    subtitle: 'Ideaal bij je drankje',
+    categories: [
+      {
+        name: 'Snacks',
+        items: [
+          { name: 'Bitterballen', description: '8 stuks, mosterd', price: '€ 10' },
+          { name: 'Kaasblokjes', description: 'Oude kaas, mosterd', price: '€ 8' },
+          { name: 'Nachos Supreme', description: 'Kaas, guacamole, zure room, jalapeño', price: '€ 14' },
+          { name: 'Chicken Wings', description: '8 stuks, Buffalo of BBQ', price: '€ 14' },
+        ],
+      },
+      {
+        name: 'Platters (voor 2-4 personen)',
+        items: [
+          { name: 'Cheese Platter', description: 'Selectie kazen, noten, honing', price: '€ 22' },
+          { name: 'Charcuterie Platter', description: 'Vleeswaren, olijven, brood', price: '€ 24' },
+          { name: 'Mix Platter', description: 'Bitterballen, wings, nachos, dips', price: '€ 28' },
+        ],
+      },
+    ],
+  },
+  cocktails: {
+    title: 'Cocktails',
+    subtitle: 'Handgemaakte cocktails door onze bartenders',
+    categories: [
+      {
+        name: 'Signature Cocktails',
+        items: [
+          { name: 'Royal Falcon', description: 'Vodka, passievrucht, limoen, prosecco', price: '€ 14' },
+          { name: 'Smoky Old Fashioned', description: 'Bourbon, gerookt met hickory, bitters', price: '€ 15' },
+          { name: 'Garden Spritz', description: 'Gin, elderflower, komkommer, tonic', price: '€ 13' },
+          { name: 'Espresso Martini', description: 'Vodka, Kahlua, verse espresso', price: '€ 14' },
+        ],
+      },
+      {
+        name: 'Classics',
+        items: [
+          { name: 'Mojito', description: 'Rum, munt, limoen, suiker', price: '€ 12' },
+          { name: 'Margarita', description: 'Tequila, triple sec, limoen', price: '€ 12' },
+          { name: 'Negroni', description: 'Gin, Campari, vermout', price: '€ 12' },
+          { name: 'Moscow Mule', description: 'Vodka, ginger beer, limoen', price: '€ 11' },
+          { name: 'Aperol Spritz', description: 'Aperol, prosecco, soda', price: '€ 10' },
+        ],
+      },
+      {
+        name: 'Mocktails',
+        items: [
+          { name: 'Virgin Mojito', description: 'Munt, limoen, ginger ale', price: '€ 7' },
+          { name: 'Passion Fizz', description: 'Passievrucht, sinaasappel, soda', price: '€ 7' },
+          { name: 'Berry Lemonade', description: 'Rode vruchten, citroen, munt', price: '€ 7' },
+        ],
+      },
+    ],
+  },
+  wines: {
+    title: 'Wijnen',
+    subtitle: 'Geselecteerde wijnen per glas of fles',
+    categories: [
+      {
+        name: 'Witte Wijnen',
+        items: [
+          { name: 'Pinot Grigio', description: 'Italië, fris en fruitig', price: '€ 6 / € 24' },
+          { name: 'Sauvignon Blanc', description: 'Nieuw-Zeeland, citrus en gras', price: '€ 7 / € 28' },
+          { name: 'Chardonnay', description: 'Frankrijk, rijk en romig', price: '€ 7 / € 28' },
+        ],
+      },
+      {
+        name: 'Rode Wijnen',
+        items: [
+          { name: 'Merlot', description: 'Chili, zacht en rond', price: '€ 6 / € 24' },
+          { name: 'Cabernet Sauvignon', description: 'Argentinië, vol en krachtig', price: '€ 7 / € 28' },
+          { name: 'Rioja Reserva', description: 'Spanje, complex en elegant', price: '€ 8 / € 32' },
+        ],
+      },
+      {
+        name: 'Rosé & Bubbels',
+        items: [
+          { name: 'Provence Rosé', description: 'Frankrijk, droog en verfrissend', price: '€ 7 / € 28' },
+          { name: 'Prosecco', description: 'Italië, fris en feestelijk', price: '€ 7 / € 30' },
+          { name: 'Champagne', description: 'Moët & Chandon Brut', price: '€ 12 / € 65' },
+        ],
+      },
+    ],
+  },
+  beers: {
+    title: 'Bieren',
+    subtitle: 'Van tap en fles',
+    categories: [
+      {
+        name: 'Van Tap',
+        items: [
+          { name: 'Jupiler', description: '25cl / 50cl', price: '€ 2.80 / € 4.50' },
+          { name: 'Stella Artois', description: '25cl / 50cl', price: '€ 3 / € 5' },
+          { name: 'Leffe Blond', description: '33cl', price: '€ 4.50' },
+        ],
+      },
+      {
+        name: 'Speciaalbieren',
+        items: [
+          { name: 'Duvel', description: 'Belgisch blond, 8.5%', price: '€ 5' },
+          { name: 'Westmalle Tripel', description: 'Trappist, 9.5%', price: '€ 5.50' },
+          { name: 'Chimay Blauw', description: 'Trappist donker, 9%', price: '€ 5.50' },
+          { name: 'Vedett IPA', description: 'Indian Pale Ale, 5.5%', price: '€ 4.50' },
+        ],
+      },
+    ],
+  },
+}
+
+export type MenuItem = {
+  name: string
+  description?: string
+  price: string
+}
+
+export type MenuCategory = {
+  name: string
+  items: MenuItem[]
+}
+
+export type Menu = {
+  title: string
+  subtitle: string
+  categories: MenuCategory[]
+}

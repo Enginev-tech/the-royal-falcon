@@ -1,0 +1,189 @@
+/* The Royal Falcon - Custom Theme */
+/* Dark mode as default - No light mode */
+
+:root {
+  /* Base Colors - Black & White */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  
+  /* Background Images */
+  --bg-main: url('/background/main-bg.png');
+  --bg-section: url('/background/Falcon-section.png');
+  --bg-pattern: url('/background/BG.png');
+  
+  /* Background Gradient */
+  --background-gradient: linear-gradient(to bottom, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+  
+  /* Card */
+  --card: #151515;
+  --card-foreground: #ffffff;
+  
+  /* Popover */
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  
+  /* Primary - White */
+  --primary: #ffffff;
+  --primary-foreground: #0a0a0a;
+  
+  /* Secondary - Light gray */
+  --secondary: #888888;
+  --secondary-foreground: #0a0a0a;
+  
+  /* Muted */
+  --muted: #262a31;
+  --muted-foreground: #cfcfc6;
+  
+  /* Accent */
+  --accent: #222222;
+  --accent-foreground: #ffffff;
+  
+  /* Destructive */
+  --destructive: #cc0000;
+  --destructive-foreground: #ffffff;
+  
+  /* Border & Input */
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #ffffff;
+  
+  /* Chart Colors */
+  --chart-1: #ff9a8a;
+  --chart-2: #d1f2e5;
+  --chart-3: #fd8775;
+  --chart-4: #73e8b9;
+  --chart-5: #ffbcb2;
+  
+  /* Sidebar */
+  --sidebar: #16191e;
+  --sidebar-foreground: #fff4e6;
+  --sidebar-primary: #ffb1a5;
+  --sidebar-primary-foreground: #383b49;
+  --sidebar-accent: #1c2027;
+  --sidebar-accent-foreground: #ffb1a5;
+  --sidebar-border: #38454b;
+  --sidebar-ring: #fbde9c;
+  
+  /* Typography */
+  --font-sans: "Barlow Semi Condensed", ui-sans-serif, sans-serif, system-ui;
+  
+  /* Border Radius */
+  --radius-sm: 5px;
+  --radius-md: 5px;
+  --radius-lg: 5px;
+  --radius-xl: 12px;
+  --radius-card: 12px;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* Shadows */
+  --shadow-color: #0b0a09;
+  --shadow-2xs: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.25);
+  --shadow-xs: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.25);
+  --shadow-sm: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 1px 2px -3.5px hsl(30 10% 4% / 0.50);
+  --shadow: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 1px 2px -3.5px hsl(30 10% 4% / 0.50);
+  --shadow-md: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 2px 4px -3.5px hsl(30 10% 4% / 0.50);
+  --shadow-lg: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 4px 6px -3.5px hsl(30 10% 4% / 0.50);
+  --shadow-xl: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 8px 10px -3.5px hsl(30 10% 4% / 0.50);
+  --shadow-2xl: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 1.25);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(22, 25, 30, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 12px;
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #ffb1a5, #ffd4a5);
+  --gradient-teal: linear-gradient(135deg, #72b1a4, #7dc9ab);
+}
+
+/* Tailwind CSS v4 Theme Integration */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+
+  /* Border Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  /* Shadows */
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  /* Letter Spacing */
+  --tracking-tighter: var(--tracking-tighter);
+  --tracking-tight: var(--tracking-tight);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: var(--tracking-wide);
+  --tracking-wider: var(--tracking-wider);
+  --tracking-widest: var(--tracking-widest);
+}
+
+/* Force our theme colors over shadcn-glass-ui */
+:root,
+.glass,
+[data-theme="glass"],
+[data-theme] {
+  --primary: #ffb1a5 !important;
+  --primary-foreground: #383b49 !important;
+  --secondary: #72b1a4 !important;
+  --secondary-foreground: #383b49 !important;
+  --ring: #72b1a4 !important;
+  --background: #080a0d !important;
+  --foreground: #fff4e6 !important;
+  --card: #16191e !important;
+  --card-foreground: #f3ebd2 !important;
+  --muted: #2a2f36 !important;
+  --muted-foreground: #d2d2c8 !important;
+  --accent: #2b3a40 !important;
+  --accent-foreground: #efe6cc !important;
+  --border: #2e333b !important;
+}
