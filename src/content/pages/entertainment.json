@@ -1,0 +1,221 @@
+{
+  "seo": {
+    "title": "Entertainment: snooker, biljart, darts & FIFA",
+    "description": "Entertainment bij The Royal Falcon in Arendonk: snooker, biljart, darts en FIFA. Combineer games met cocktails en bar bites voor een complete avond.",
+    "path": "/entertainment"
+  },
+  "gamesIntro": {
+    "section": {
+      "id": "games",
+      "title": "Games & Entertainment",
+      "subtitle": "Meer dan een restaurant, meer dan een bar. Bij The Royal Falcon combineer je lekker eten en drinken met entertainment.",
+      "variant": "decorated"
+    },
+    "intro": "Op zoek naar entertainment in Arendonk? Speel snooker, pool, darts of FIFA in een stijlvolle setting en combineer je game night met cocktails, bar bites en live sports op groot scherm.",
+    "cards": [
+      {
+        "title": "Snooker",
+        "description": "Twee professionele snookertafels in perfecte conditie.",
+        "image": "/hero/hero-snooker.png",
+        "imageAlt": "Professionele snooker tafel"
+      },
+      {
+        "title": "Biljart",
+        "description": "Klassiek poolbiljart voor iedereen — van beginners tot gevorderden.",
+        "image": "/footer/snooker-small-01.png",
+        "imageAlt": "Biljart tafel"
+      },
+      {
+        "title": "Darts",
+        "description": "Van casual throws tot serieuze competitie.",
+        "image": "/footer/snooker-small-02.png",
+        "imageAlt": "Darts bord"
+      },
+      {
+        "title": "FIFA & Gaming",
+        "description": "Daag je vrienden uit voor een potje FIFA op groot scherm.",
+        "image": "/footer/snooker-small-03.png",
+        "imageAlt": "Gaming corner"
+      }
+    ]
+  },
+  "parallax": [
+    { "id": "entertainment-parallax", "imageSrc": "/parallax/para-9.png", "height": "md" },
+    { "id": "entertainment-parallax-2", "imageSrc": "/parallax/para-4.png", "height": "sm" }
+  ],
+  "gameRulesSection": {
+    "section": {
+      "id": "spelregels",
+      "title": "Spelregels",
+      "subtitle": "Ken de regels, speel met stijl. Selecteer een spel voor de officiële regels en tips.",
+      "variant": "plain"
+    },
+    "intro": "Of je nu beginner bent of ervaren speler, onze spelregels helpen je om het meeste uit je avond te halen. Perfect voor groepen, vrienden en bedrijven die op zoek zijn naar teambuilding in Arendonk.",
+    "helpCard": {
+      "title": "Hulp nodig?",
+      "description": "Onze staff helpt je graag met de regels of geeft tips om je spel te verbeteren.",
+      "cta": { "label": "Vraag aan de bar", "href": "/contact" }
+    }
+  },
+  "gameRules": {
+    "snooker": {
+      "title": "Snooker",
+      "intro": "Snooker is een precisie-biljartspel met 22 ballen op een grote tafel.",
+      "rules": [
+        "Pot eerst een rode bal (1 punt), daarna een gekleurde",
+        "Gekleurde ballen: geel (2), groen (3), bruin (4), blauw (5), roze (6), zwart (7)",
+        "Na elke gekleurde bal worden ze teruggeplaatst tot alle rode ballen op zijn",
+        "Fout = minimaal 4 punten naar tegenstander",
+        "Hoogste break mogelijk: 147 (maximum break)",
+        "Frame gewonnen door meeste punten"
+      ],
+      "tips": [
+        "Gebruik krijt voor elke stoot",
+        "Neem je tijd voor positiespel",
+        "Oefen safety shots"
+      ]
+    },
+    "biljart": {
+      "title": "Pool Biljart (8-ball)",
+      "intro": "Pool is het meest populaire biljartspel ter wereld.",
+      "rules": [
+        "Één speler speelt volle ballen (1-7), de ander halve (9-15)",
+        "Break bepaalt wie welke groep speelt (eerste gepotte bal)",
+        "Pot al je ballen en daarna de 8-bal om te winnen",
+        "Pot je de 8-bal te vroeg = verlies",
+        "Bij fout mag tegenstander de witte bal vrij plaatsen",
+        "Noem je pocket voor de 8-bal"
+      ],
+      "tips": [
+        "Denk vooruit: positioneer voor volgende bal",
+        "Leer de bridge goed vasthouden",
+        "Oefen je break"
+      ]
+    },
+    "darts": {
+      "title": "Darts (501)",
+      "intro": "501 is het klassieke dartsspel voor competitie.",
+      "rules": [
+        "Start met 501 punten, werk naar exact 0",
+        "Moet eindigen op een dubbel (buitenste ring)",
+        "3 pijlen per beurt",
+        "Triple 20 = 60 punten (hoogste score per pijl)",
+        "Bullseye = 50 punten, outer bull = 25",
+        "Score boven 0 of miss op dubbel = beurt ongeldig"
+      ],
+      "tips": [
+        "Mik op triple 20 voor snelle score",
+        "Leer je outs: 32, 40, 36 zijn makkelijke finishes",
+        "Consistent gooien is belangrijker dan hard"
+      ]
+    },
+    "fifa": {
+      "title": "FIFA",
+      "intro": "Het ultieme voetbalspel op de PlayStation.",
+      "rules": [
+        "Wedstrijden van 6 minuten (2x 3 min)",
+        "Geen pauzeren tijdens online play",
+        "Bij gelijkspel: verlenging of penalty's",
+        "Fair play: geen rage quitting",
+        "Toernooien: knock-out systeem",
+        "Ranking wordt bijgehouden op ons bord"
+      ],
+      "tips": [
+        "Leer skill moves voor betere controle",
+        "Gebruik L1/LB voor getimede runs",
+        "Verdedig met CDM, niet met CB"
+      ]
+    }
+  },
+  "pricing": {
+    "section": {
+      "id": "pricing",
+      "title": "Tarieven & Reserveren",
+      "subtitle": "Wil je zeker zijn van een tafel? Reserveer vooraf, vooral in het weekend.",
+      "variant": "muted"
+    },
+    "intro": "Bekijk onze transparante tarieven voor snooker en biljart in Arendonk. Reserveren is aanbevolen voor drukke avonden, zodat je gegarandeerd een tafel hebt.",
+    "items": [
+      { "name": "Snooker", "description": "Per uur, per tafel", "price": "€ 12" },
+      { "name": "Biljart", "description": "Per uur, per tafel", "price": "€ 8" },
+      { "name": "Darts", "description": "Gratis bij consumptie", "price": "Gratis" },
+      { "name": "FIFA", "description": "Gratis bij consumptie", "price": "Gratis" }
+    ],
+    "booking": {
+      "title": "Reserveren",
+      "description": "Wil je zeker zijn van je snooker- of biljarttafel? Reserveer eenvoudig via WhatsApp of bel ons. Voor grotere groepen of toernooien maken we graag een arrangement op maat.",
+      "ctas": [
+        { "label": "WhatsApp", "href": "https://wa.me/32468303077" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    }
+  },
+  "club": {
+    "section": {
+      "id": "sv-valkenhof",
+      "title": "SV Valkenhof",
+      "subtitle": "Word lid van de snooker- en biljartclub van Arendonk!",
+      "variant": "decorated"
+    },
+    "intro": "SV Valkenhof is de lokale club voor snooker en biljart in Arendonk. Train, speel competitie en ontmoet andere liefhebbers in een gezellige, professionele omgeving.",
+    "info": {
+      "image": {
+        "src": "/hero/hero-snooker.png",
+        "alt": "SV Valkenhof clubavond"
+      },
+      "title": "Over de Club",
+      "description": "SV Valkenhof is dé snooker- en biljartclub van Arendonk. Wij spelen onze competities en trainingen bij The Royal Falcon. Of je nu beginner bent of gevorderd, je bent welkom bij onze gezellige club!",
+      "benefitsTitle": "Lidmaatschap voordelen",
+      "benefits": [
+        "Gereduceerde speeltarieven",
+        "Toegang tot clubcompetities",
+        "Gratis trainingsavonden",
+        "Deelname aan toernooien",
+        "Clubuitjes en events"
+      ],
+      "fee": {
+        "label": "Jaarlijks lidgeld",
+        "note": "Inclusief alle voordelen",
+        "price": "€ 75"
+      }
+    },
+    "membership": {
+      "title": "Word Lid",
+      "ctaLabel": "Aanmelden",
+      "intro": "Klaar om lid te worden van SV Valkenhof? Vul het formulier in en we nemen contact met je op!",
+      "form": {
+        "submitLabel": "Verstuur aanmelding",
+        "cancelLabel": "Annuleren",
+        "fields": {
+          "name": "Naam",
+          "email": "Email",
+          "phone": "Telefoon",
+          "gamePreference": "Voorkeur spel",
+          "experience": "Ervaring"
+        },
+        "options": {
+          "gamePreference": [
+            { "label": "Selecteer...", "value": "" },
+            { "label": "Snooker", "value": "snooker" },
+            { "label": "Biljart", "value": "biljart" },
+            { "label": "Beide", "value": "beide" }
+          ],
+          "experience": [
+            { "label": "Selecteer...", "value": "" },
+            { "label": "Beginner", "value": "beginner" },
+            { "label": "Gemiddeld", "value": "gemiddeld" },
+            { "label": "Gevorderd", "value": "gevorderd" }
+          ]
+        }
+      }
+    },
+    "schedule": {
+      "title": "Clubavonden",
+      "items": [
+        { "day": "Dinsdag", "time": "19:00 - 23:00 (Training)" },
+        { "day": "Donderdag", "time": "19:00 - 23:00 (Competitie)" },
+        { "day": "Zondag", "time": "14:00 - 18:00 (Vrij spel)" }
+      ]
+    }
+  }
+}

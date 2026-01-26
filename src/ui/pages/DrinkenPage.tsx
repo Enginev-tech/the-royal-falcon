@@ -4,7 +4,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { useSeo } from '../useSeo'
 import { menuData } from '../content/menus'
-import drinkenContent from '../../../content/pages/drinken.json'
+import drinken from '../../content/pages/drinken.json'
 
 function DrinkMenuBlock(props: {
   categories: Array<{
@@ -46,114 +46,96 @@ function DrinkMenuBlock(props: {
 }
 
 export function DrinkenPage() {
-  useSeo({
-    title: drinkenContent.seo.title,
-    description: drinkenContent.seo.description,
-    path: '/drinken',
-  })
+  useSeo(drinken.seo)
 
   return (
     <div>
       {/* Signature Cocktails */}
       <Section
-        id="bartenders-choice"
-        title={drinkenContent.bartendersChoice.title}
-        subtitle={drinkenContent.bartendersChoice.subtitle}
-        variant="decorated"
+        id={drinken.bartendersChoice.section.id}
+        title={drinken.bartendersChoice.section.title}
+        subtitle={drinken.bartendersChoice.section.subtitle}
+        variant={drinken.bartendersChoice.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.bartendersChoice.intro}
+          {drinken.bartendersChoice.intro}
         </p>
         <CardGrid columns={4}>
-          <Card
-            title="Royal Falcon"
-            description="Onze huiscocktail: vodka, passievrucht en limoen, getopt met een vleugje prosecco. Verfrissend, fruitig en feestelijk."
-            image="/hero/hero-cocktail-01.png"
-            imageAlt="Royal Falcon signature cocktail"
-          />
-          <Card
-            title="Smoky Old Fashioned"
-            description="Voor de whiskyliefhebber: premium bourbon, gerookt met hickory hout, afgewerkt met bitters en een twist van sinaasappel."
-            image="/hero/hero-cocktail-02.png"
-            imageAlt="Smoky Old Fashioned cocktail"
-          />
-          <Card
-            title="Espresso Martini"
-            description="De perfecte pick-me-up: verse espresso, premium vodka en een vleugje Kahlua. Sterk, zoet en vol van smaak."
-            image="/cards/cocktail-stuff.png"
-            imageAlt="Espresso Martini cocktail"
-          />
-          <Card
-            title="Mojito Royale"
-            description="Een twist op de klassieker: verse munt, limoen, witte rum en een scheutje champagne. Verfrissend en elegant."
-            image="/cards/cocktail-red.png"
-            imageAlt="Mojito Royale cocktail"
-          />
+          {drinken.bartendersChoice.cards.map((card) => (
+            <Card
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              imageAlt={card.imageAlt}
+            />
+          ))}
         </CardGrid>
       </Section>
 
-      <ParallaxSection id="drinken-parallax" imageSrc="/parallax/para-2.png" height="md" />
+      <ParallaxSection
+        id={drinken.parallax[0].id}
+        imageSrc={drinken.parallax[0].imageSrc}
+        height={drinken.parallax[0].height}
+      />
 
       {/* Cocktail Menu */}
       <Section
-        id="cocktail-menu"
-        title={drinkenContent.cocktailMenu.title}
-        subtitle={drinkenContent.cocktailMenu.subtitle}
-        variant="plain"
+        id={drinken.cocktails.section.id}
+        title={drinken.cocktails.section.title}
+        subtitle={drinken.cocktails.section.subtitle}
+        variant={drinken.cocktails.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.cocktailMenu.intro}
+          {drinken.cocktails.intro}
         </p>
         <DrinkMenuBlock categories={menuData.cocktails.categories} />
       </Section>
 
       {/* Wine Menu */}
       <Section
-        id="wine-menu"
-        title={drinkenContent.wineMenu.title}
-        subtitle={drinkenContent.wineMenu.subtitle}
-        variant="muted"
+        id={drinken.wines.section.id}
+        title={drinken.wines.section.title}
+        subtitle={drinken.wines.section.subtitle}
+        variant={drinken.wines.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.wineMenu.intro}
+          {drinken.wines.intro}
         </p>
         <DrinkMenuBlock categories={menuData.wines.categories} />
       </Section>
 
-      <ParallaxSection id="drinken-parallax-2" imageSrc="/parallax/para-7.png" height="sm" />
+      <ParallaxSection
+        id={drinken.parallax[1].id}
+        imageSrc={drinken.parallax[1].imageSrc}
+        height={drinken.parallax[1].height}
+      />
 
       {/* Beer Menu */}
       <Section
-        id="beer-menu"
-        title={drinkenContent.beerMenu.title}
-        subtitle={drinkenContent.beerMenu.subtitle}
-        variant="plain"
+        id={drinken.beers.section.id}
+        title={drinken.beers.section.title}
+        subtitle={drinken.beers.section.subtitle}
+        variant={drinken.beers.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.beerMenu.intro}
+          {drinken.beers.intro}
         </p>
         <DrinkMenuBlock categories={menuData.beers.categories} />
       </Section>
 
       {/* Bar Gallery */}
       <Section
-        id="gallery"
-        title={drinkenContent.gallery.title}
-        subtitle={drinkenContent.gallery.subtitle}
-        variant="decorated"
+        id={drinken.gallery.section.id}
+        title={drinken.gallery.section.title}
+        subtitle={drinken.gallery.section.subtitle}
+        variant={drinken.gallery.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.gallery.intro}
+          {drinken.gallery.intro}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { src: '/hero/hero-bar01.png', alt: 'Bar interieur met ambient verlichting' },
-            { src: '/hero/hero-bar02.png', alt: 'Gezellige barsfeer' },
-            { src: '/hero/hero-bartender01.png', alt: 'Bartender aan het werk' },
-            { src: '/hero/hero-bartender02.png', alt: 'Cocktails maken' },
-            { src: '/hero/hero-wine-01.png', alt: 'Onze wijnselectie' },
-            { src: '/hero/hero-wine-02.png', alt: 'Wijn proeven' },
-          ].map((img, i) => (
+          {drinken.gallery.images.map((img, i) => (
             <div
               key={img.src}
               className="glass-card card-animate rounded-[var(--radius-card)] aspect-[4/3] overflow-hidden relative group"
@@ -173,17 +155,17 @@ export function DrinkenPage() {
 
       {/* Desserts */}
       <Section
-        id="zoet"
-        title={drinkenContent.sweets.title}
-        subtitle={drinkenContent.sweets.subtitle}
-        variant="muted"
+        id={drinken.desserts.section.id}
+        title={drinken.desserts.section.title}
+        subtitle={drinken.desserts.section.subtitle}
+        variant={drinken.desserts.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {drinkenContent.sweets.intro}
+          {drinken.desserts.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {drinkenContent.sweets.items.map((dessert) => (
+            {drinken.desserts.items.map((dessert) => (
               <div key={dessert.name} className="text-center">
                 <h4 className="text-[var(--foreground)] font-medium">{dessert.name}</h4>
                 <p className="text-xs text-[var(--muted-foreground)] mt-1">{dessert.desc}</p>

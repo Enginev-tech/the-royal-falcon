@@ -1,0 +1,107 @@
+{
+  "seo": {
+    "title": "Eten in Arendonk – lunch, diner & chef specials",
+    "description": "Eten bij The Royal Falcon in Arendonk: chef specials, lunchmenu, dinermenu, kids menu en borrel menu. Combineer met cocktails en reserveer je tafel.",
+    "path": "/eten"
+  },
+  "chefSpecials": {
+    "section": {
+      "id": "chef-specials",
+      "title": "Chef Specials",
+      "subtitle": "Onze signature gerechten — seizoensgebonden specials met een Royal Falcon twist. Perfect voor een culinaire avond uit in Arendonk.",
+      "variant": "decorated"
+    },
+    "intro": "Proef de meest populaire gerechten van Arendonk met lokale seizoensproducten en een moderne twist. Onze chef specials combineren klassieke smaken met creatieve presentaties — ideaal voor foodies en levensgenieters.",
+    "cards": [
+      {
+        "title": "Steak Royal",
+        "description": "Onze signature steak: malse entrecote van 300g, gebakken zoals jij het wilt. Geserveerd met seizoensgroenten, huisgemaakte frieten en een saus naar keuze.",
+        "image": "/cards/card-steak.png",
+        "imageAlt": "Royal steak special"
+      },
+      {
+        "title": "Caesar Salad",
+        "description": "De klassieker die nooit verveelt. Knapperige romaine sla, huisgemaakte Caesar dressing, verse parmezaan en krokante croutons.",
+        "image": "/cards/card-ceasar.png",
+        "imageAlt": "Caesar salad"
+      },
+      {
+        "title": "Charcuterie Platter",
+        "description": "Ideaal om te delen: een selectie van de beste vleeswaren, kazen, olijven, huisgemaakte dips en vers brood.",
+        "image": "/cards/card-chacutrie.png",
+        "imageAlt": "Charcuterie plank"
+      },
+      {
+        "title": "Pasta del Giorno",
+        "description": "Dagverse pasta met seizoensgebonden ingrediënten. Vraag onze server naar de pasta van vandaag.",
+        "image": "/cards/landscape-food.png",
+        "imageAlt": "Pasta special"
+      }
+    ]
+  },
+  "parallax": [
+    { "id": "eten-parallax", "imageSrc": "/parallax/para-5.png", "height": "md" },
+    { "id": "eten-parallax-2", "imageSrc": "/parallax/para-3.png", "height": "sm" }
+  ],
+  "lunch": {
+    "section": {
+      "id": "lunch",
+      "title": "Lunch Menu",
+      "subtitle": "Lunchen in Arendonk? Van snelle broodjes tot verwarmende soepen — onze lunchkaart heeft voor elk wat wils. Geserveerd van 12:00 tot 15:00.",
+      "variant": "plain"
+    },
+    "intro": "Zoek je een snelle lunch in Arendonk of liever uitgebreid tafelen? Onze lunchkaart biedt frisse salades, artisanale broodjes en huisgemaakte soepen, perfect voor een zakelijke afspraak of een gezellige pauze."
+  },
+  "diner": {
+    "section": {
+      "id": "diner",
+      "title": "Diner Menu",
+      "subtitle": "Diner in Arendonk met sfeer en smaak. Van sappige steaks tot verse pasta — onze keuken draait vanaf 17:00.",
+      "variant": "muted"
+    },
+    "intro": "Geniet van een sfeervol diner in Arendonk met onze signature steaks, pasta’s en seizoensgerechten. We werken met verse ingrediënten en serveren elk gerecht met zorg en gastvrijheid."
+  },
+  "kids": {
+    "section": {
+      "id": "kids",
+      "title": "Kids Menu",
+      "subtitle": "Voor onze kleine gasten tot 12 jaar. Kindvriendelijke gerechten die ook de ouders goedkeuren.",
+      "variant": "plain"
+    },
+    "intro": "Ook voor gezinnen is The Royal Falcon een topadres. Het kids menu bevat herkenbare favorieten, zodat kinderen en ouders allebei ontspannen kunnen genieten van een lunch of diner."
+  },
+  "borrel": {
+    "section": {
+      "id": "borrel",
+      "title": "Bar Bites",
+      "subtitle": "Snacks en platters voor bij je cocktail. Ideaal tijdens een potje snooker, een avond met vrienden of gewoon omdat het kan.",
+      "variant": "decorated"
+    },
+    "intro": "Deelbare bar bites maken elke avond compleet. Kies uit borrelplanken, warme snacks en kleine gerechten die perfect passen bij cocktails, speciaalbier of een goed glas wijn."
+  },
+  "reservation": {
+    "section": {
+      "id": "reservation",
+      "title": "Reserveer je tafel",
+      "subtitle": "Zeker zijn van je plekje? Reserveer eenvoudig via WhatsApp of mail.",
+      "variant": "muted"
+    },
+    "card": {
+      "heading": "Boek een tafel",
+      "description": "Of je nu komt voor een uitgebreid diner, een snelle lunch of gewoon wat hapjes bij je cocktail — we maken graag een plekje vrij. Voor grotere gezelschappen of events neem je best even contact op.",
+      "bullets": [
+        "Lunch: 12:00 – 15:00 (weekend)",
+        "Diner: vanaf 17:00",
+        "Bar bites: de hele avond"
+      ],
+      "ctas": [
+        { "label": "Reserveer nu", "href": "/contact#booking" },
+        { "label": "WhatsApp", "href": "https://wa.me/32468303077" }
+      ],
+      "image": {
+        "src": "/hero/hero-food.png",
+        "alt": "Tafel setting bij The Royal Falcon"
+      }
+    }
+  }
+}

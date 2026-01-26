@@ -4,7 +4,7 @@ import { Section } from '../components/Section'
 import { ParallaxSection } from '../components/ParallaxSection'
 import { useSeo } from '../useSeo'
 import { useState } from 'react'
-import entertainmentContent from '../../../content/pages/entertainment.json'
+import entertainment from '../../content/pages/entertainment.json'
 
 // Solid Icons
 function CheckIcon() {
@@ -31,73 +31,59 @@ function UserIcon() {
   )
 }
 
-type GameRule = (typeof entertainmentContent.gameRules)[number]
-const gameRules = entertainmentContent.gameRules.reduce<Record<string, GameRule>>((acc, game) => {
-  acc[game.key] = game
-  return acc
-}, {})
+const gameRules = entertainment.gameRules as Record<
+  string,
+  { title: string; intro: string; rules: string[]; tips: string[] }
+>
 
 export function EntertainmentPage() {
-  const [selectedGame, setSelectedGame] = useState<keyof typeof gameRules>(entertainmentContent.gameRules[0].key)
+  const [selectedGame, setSelectedGame] = useState<keyof typeof gameRules>(
+    Object.keys(gameRules)[0] as keyof typeof gameRules,
+  )
   const [memberFormOpen, setMemberFormOpen] = useState(false)
 
-  useSeo({
-    title: entertainmentContent.seo.title,
-    description: entertainmentContent.seo.description,
-    path: '/entertainment',
-  })
+  useSeo(entertainment.seo)
 
   return (
     <div>
       {/* Games Intro */}
       <Section
-        id="games"
-        title={entertainmentContent.games.title}
-        subtitle={entertainmentContent.games.subtitle}
-        variant="decorated"
+        id={entertainment.gamesIntro.section.id}
+        title={entertainment.gamesIntro.section.title}
+        subtitle={entertainment.gamesIntro.section.subtitle}
+        variant={entertainment.gamesIntro.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {entertainmentContent.games.intro}
+          {entertainment.gamesIntro.intro}
         </p>
         <CardGrid columns={4}>
-          <Card
-            title="Snooker"
-            description="Twee professionele snookertafels in perfecte conditie."
-            image="/hero/hero-snooker.png"
-            imageAlt="Professionele snooker tafel"
-          />
-          <Card
-            title="Biljart"
-            description="Klassiek poolbiljart voor iedereen — van beginners tot gevorderden."
-            image="/footer/snooker-small-01.png"
-            imageAlt="Biljart tafel"
-          />
-          <Card
-            title="Darts"
-            description="Van casual throws tot serieuze competitie."
-            image="/footer/snooker-small-02.png"
-            imageAlt="Darts bord"
-          />
-          <Card
-            title="FIFA & Gaming"
-            description="Daag je vrienden uit voor een potje FIFA op groot scherm."
-            image="/footer/snooker-small-03.png"
-            imageAlt="Gaming corner"
-          />
+          {entertainment.gamesIntro.cards.map((card) => (
+            <Card
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              imageAlt={card.imageAlt}
+            />
+          ))}
         </CardGrid>
       </Section>
 
-      <ParallaxSection id="entertainment-parallax" imageSrc="/parallax/para-9.png" height="md" />
+      <ParallaxSection
+        id={entertainment.parallax[0].id}
+        imageSrc={entertainment.parallax[0].imageSrc}
+        height={entertainment.parallax[0].height}
+      />
 
       {/* Game Rules Section */}
       <Section
-        id="spelregels"
-        title={entertainmentContent.rules.title}
-        subtitle={entertainmentContent.rules.subtitle}
-        variant="plain"
+        id={entertainment.gameRulesSection.section.id}
+        title={entertainment.gameRulesSection.section.title}
+        subtitle={entertainment.gameRulesSection.section.subtitle}
+        variant={entertainment.gameRulesSection.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {entertainmentContent.rules.intro}
+          {entertainment.gameRulesSection.intro}
         </p>
         {/* Game Selector Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -148,12 +134,12 @@ export function EntertainmentPage() {
               </div>
 
               <div className="mt-8 p-6 bg-[var(--accent)] rounded-lg">
-                <h4 className="text-lg mb-3">Hulp nodig?</h4>
+                <h4 className="text-lg mb-3">{entertainment.gameRulesSection.helpCard.title}</h4>
                 <p className="text-sm text-[var(--muted-foreground)] mb-4">
-                  Onze staff helpt je graag met de regels of geeft tips om je spel te verbeteren.
+                  {entertainment.gameRulesSection.helpCard.description}
                 </p>
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href="/contact">
-                  Vraag aan de bar
+                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={entertainment.gameRulesSection.helpCard.cta.href}>
+                  {entertainment.gameRulesSection.helpCard.cta.label}
                   <span aria-hidden>→</span>
                 </a>
               </div>
@@ -164,98 +150,107 @@ export function EntertainmentPage() {
 
       {/* Pricing & Booking */}
       <Section
-        id="pricing"
-        title={entertainmentContent.pricing.title}
-        subtitle={entertainmentContent.pricing.subtitle}
-        variant="muted"
+        id={entertainment.pricing.section.id}
+        title={entertainment.pricing.section.title}
+        subtitle={entertainment.pricing.section.subtitle}
+        variant={entertainment.pricing.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {entertainmentContent.pricing.intro}
+          {entertainment.pricing.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h3 className="text-2xl tracking-wider">Tarieven</h3>
               <ul className="mt-6 space-y-4">
-                {entertainmentContent.pricing.items.map((item, index) => (
-                  <li
-                    key={item.name}
-                    className={`flex justify-between items-start ${
-                      index < entertainmentContent.pricing.items.length - 1
-                        ? 'border-b border-[var(--border)] pb-3'
-                        : ''
-                    }`}
-                  >
-                    <div>
-                      <span className="text-[var(--foreground)] font-medium">{item.name}</span>
-                      <p className="text-sm text-[var(--muted-foreground)]">{item.note}</p>
-                    </div>
-                    <span
-                      className={`font-semibold text-lg ${
-                        item.accent === 'secondary' ? 'text-[var(--secondary)]' : 'text-[var(--primary)]'
+                {entertainment.pricing.items.map((item, index) => {
+                  const isLast = index === entertainment.pricing.items.length - 1
+                  const isFree = item.price === 'Gratis'
+                  return (
+                    <li
+                      key={item.name}
+                      className={`flex justify-between items-start ${
+                        isLast ? '' : 'border-b border-[var(--border)] pb-3'
                       }`}
                     >
-                      {item.price}
-                    </span>
-                  </li>
-                ))}
+                      <div>
+                        <span className="text-[var(--foreground)] font-medium">{item.name}</span>
+                        <p className="text-sm text-[var(--muted-foreground)]">{item.description}</p>
+                      </div>
+                      <span
+                        className={`font-semibold text-lg ${
+                          isFree ? 'text-[var(--secondary)]' : 'text-[var(--primary)]'
+                        }`}
+                      >
+                        {item.price}
+                      </span>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
             <div>
-              <h3 className="text-2xl tracking-wider">{entertainmentContent.pricing.bookingTitle}</h3>
+              <h3 className="text-2xl tracking-wider">{entertainment.pricing.booking.title}</h3>
               <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
-                {entertainmentContent.pricing.bookingIntro}
+                {entertainment.pricing.booking.description}
               </p>
               <div className="mt-6 flex flex-wrap gap-4">
-                {entertainmentContent.pricing.bookingCtas.map((cta) => (
-                  <a
-                    key={cta.label}
-                    className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
-                    href={cta.href}
-                    target={cta.href.startsWith('http') ? '_blank' : undefined}
-                    rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  >
-                    {cta.label}
-                    <span aria-hidden>→</span>
-                  </a>
-                ))}
+                {entertainment.pricing.booking.ctas.map((cta) => {
+                  const isExternal = cta.href.startsWith('http')
+                  return (
+                    <a
+                      key={cta.href}
+                      className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
+                      href={cta.href}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                    >
+                      {cta.label}
+                      <span aria-hidden>→</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       </Section>
 
-      <ParallaxSection id="entertainment-parallax-2" imageSrc="/parallax/para-4.png" height="sm" />
+      <ParallaxSection
+        id={entertainment.parallax[1].id}
+        imageSrc={entertainment.parallax[1].imageSrc}
+        height={entertainment.parallax[1].height}
+      />
 
       {/* SV Valkenhof Club Section */}
       <Section
-        id="sv-valkenhof"
-        title={entertainmentContent.club.title}
-        subtitle={entertainmentContent.club.subtitle}
-        variant="decorated"
+        id={entertainment.club.section.id}
+        title={entertainment.club.section.title}
+        subtitle={entertainment.club.section.subtitle}
+        variant={entertainment.club.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {entertainmentContent.club.intro}
+          {entertainment.club.intro}
         </p>
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Club Info */}
           <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
             <div className="aspect-[16/9] overflow-hidden">
               <img
-                src="/hero/hero-snooker.png"
-                alt="SV Valkenhof clubavond"
+                src={entertainment.club.info.image.src}
+                alt={entertainment.club.info.image.alt}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="p-6 md:p-8">
-              <h3 className="text-2xl tracking-wider">{entertainmentContent.club.aboutTitle}</h3>
+              <h3 className="text-2xl tracking-wider">{entertainment.club.info.title}</h3>
               <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
-                {entertainmentContent.club.aboutText}
+                {entertainment.club.info.description}
               </p>
               
-              <h4 className="text-lg text-[var(--primary)] mt-6 mb-3">{entertainmentContent.club.benefitsTitle}</h4>
+              <h4 className="text-lg text-[var(--primary)] mt-6 mb-3">{entertainment.club.info.benefitsTitle}</h4>
               <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
-                {entertainmentContent.club.benefits.map((benefit) => (
+                {entertainment.club.info.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <CheckIcon />
                     {benefit}
@@ -266,10 +261,10 @@ export function EntertainmentPage() {
               <div className="mt-6 p-4 bg-[var(--muted)] rounded-lg">
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-[var(--foreground)] font-medium">{entertainmentContent.club.feeLabel}</span>
-                    <p className="text-xs text-[var(--muted-foreground)]">{entertainmentContent.club.feeNote}</p>
+                    <span className="text-[var(--foreground)] font-medium">{entertainment.club.info.fee.label}</span>
+                    <p className="text-xs text-[var(--muted-foreground)]">{entertainment.club.info.fee.note}</p>
                   </div>
-                  <span className="text-[var(--primary)] font-bold text-2xl">{entertainmentContent.club.feeAmount}</span>
+                  <span className="text-[var(--primary)] font-bold text-2xl">{entertainment.club.info.fee.price}</span>
                 </div>
               </div>
             </div>
@@ -277,7 +272,7 @@ export function EntertainmentPage() {
 
           {/* Membership Form */}
           <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
-            <h3 className="text-2xl tracking-wider mb-6">{entertainmentContent.club.memberFormTitle}</h3>
+            <h3 className="text-2xl tracking-wider mb-6">{entertainment.club.membership.title}</h3>
             
             {!memberFormOpen ? (
               <div className="text-center py-8">
@@ -285,20 +280,22 @@ export function EntertainmentPage() {
                   <UserIcon />
                 </div>
                 <p className="text-[var(--muted-foreground)] mb-6">
-                  {entertainmentContent.club.memberFormIntro}
+                  {entertainment.club.membership.intro}
                 </p>
                 <button 
                   onClick={() => setMemberFormOpen(true)}
                   className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
                 >
-                  {entertainmentContent.club.memberFormCta}
+                  {entertainment.club.membership.ctaLabel}
                   <span aria-hidden>→</span>
                 </button>
               </div>
             ) : (
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">Naam *</label>
+                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">
+                    {entertainment.club.membership.form.fields.name} *
+                  </label>
                   <input 
                     type="text" 
                     required
@@ -307,7 +304,9 @@ export function EntertainmentPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">Email *</label>
+                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">
+                    {entertainment.club.membership.form.fields.email} *
+                  </label>
                   <input 
                     type="email" 
                     required
@@ -316,7 +315,9 @@ export function EntertainmentPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">Telefoon</label>
+                  <label className="block text-sm text-[var(--muted-foreground)] mb-2">
+                    {entertainment.club.membership.form.fields.phone}
+                  </label>
                   <input 
                     type="tel" 
                     className="w-full px-4 py-3 bg-[var(--muted)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]"
@@ -325,29 +326,35 @@ export function EntertainmentPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="voorkeur-spel" className="block text-sm text-[var(--muted-foreground)] mb-2">Voorkeur spel</label>
+                    <label htmlFor="voorkeur-spel" className="block text-sm text-[var(--muted-foreground)] mb-2">
+                      {entertainment.club.membership.form.fields.gamePreference}
+                    </label>
                     <select 
                       id="voorkeur-spel"
                       title="Selecteer je voorkeur spel"
                       className="w-full px-4 py-3 bg-[var(--muted)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]"
                     >
-                      <option value="">Selecteer...</option>
-                      <option value="snooker">Snooker</option>
-                      <option value="biljart">Biljart</option>
-                      <option value="beide">Beide</option>
+                      {entertainment.club.membership.form.options.gamePreference.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="ervaring" className="block text-sm text-[var(--muted-foreground)] mb-2">Ervaring</label>
+                    <label htmlFor="ervaring" className="block text-sm text-[var(--muted-foreground)] mb-2">
+                      {entertainment.club.membership.form.fields.experience}
+                    </label>
                     <select 
                       id="ervaring"
                       title="Selecteer je ervaringsniveau"
                       className="w-full px-4 py-3 bg-[var(--muted)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]"
                     >
-                      <option value="">Selecteer...</option>
-                      <option value="beginner">Beginner</option>
-                      <option value="gemiddeld">Gemiddeld</option>
-                      <option value="gevorderd">Gevorderd</option>
+                      {entertainment.club.membership.form.options.experience.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -356,14 +363,14 @@ export function EntertainmentPage() {
                     type="submit"
                     className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)] flex-1 justify-center"
                   >
-                    Verstuur aanmelding
+                    {entertainment.club.membership.form.submitLabel}
                   </button>
                   <button 
                     type="button"
                     onClick={() => setMemberFormOpen(false)}
                     className="px-6 py-3 text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
                   >
-                    Annuleren
+                    {entertainment.club.membership.form.cancelLabel}
                   </button>
                 </div>
               </form>
@@ -371,12 +378,12 @@ export function EntertainmentPage() {
 
             {/* Club Schedule */}
             <div className="mt-8 pt-8 border-t border-[var(--border)]">
-              <h4 className="text-lg text-[var(--primary)] mb-4">{entertainmentContent.club.scheduleTitle}</h4>
+              <h4 className="text-lg text-[var(--primary)] mb-4">{entertainment.club.schedule.title}</h4>
               <ul className="space-y-3 text-sm">
-                {entertainmentContent.club.schedule.map((slot) => (
-                  <li key={slot.day} className="flex justify-between">
-                    <span className="text-[var(--muted-foreground)]">{slot.day}</span>
-                    <span className="text-[var(--foreground)]">{slot.time}</span>
+                {entertainment.club.schedule.items.map((item) => (
+                  <li key={item.day} className="flex justify-between">
+                    <span className="text-[var(--muted-foreground)]">{item.day}</span>
+                    <span className="text-[var(--foreground)]">{item.time}</span>
                   </li>
                 ))}
               </ul>

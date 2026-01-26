@@ -1,3 +1,3 @@
 import siteJson from '../../../content/site.json'
 
-export const site = siteJson as const
+export const site = siteJson

@@ -1,5 +1,3 @@
-import * as React from "react"
-
 import { Widget, WidgetContent, WidgetHeader, WidgetTitle } from "./ui/widget"
 import { Label } from "./ui/label"
 

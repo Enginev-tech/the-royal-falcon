@@ -4,7 +4,7 @@ import { Section } from '../components/Section'
 import { ParallaxSection } from '../components/ParallaxSection'
 import { useSeo } from '../useSeo'
 import { SportsSm01Widget } from '../../components/sports-01'
-import eventsContent from '../../../content/pages/events.json'
+import events from '../../content/pages/events.json'
 
 // Solid Icons
 function CheckIcon() {
@@ -47,40 +47,24 @@ function ClockIcon() {
   )
 }
 
-const {
-  agenda,
-  weekAgenda,
-  calendar,
-  liveSport,
-  liveMatches,
-  recentResults,
-  standings,
-  mainEvents,
-  specialEvents,
-} = eventsContent
-
 export function EventsPage() {
-  useSeo({
-    title: eventsContent.seo.title,
-    description: eventsContent.seo.description,
-    path: '/events',
-  })
+  useSeo(events.seo)
 
   return (
     <div>
       {/* Week Agenda Overview */}
       <Section
-        id="agenda"
-        title={agenda.title}
-        subtitle={agenda.subtitle}
-        variant="decorated"
+        id={events.weekAgenda.section.id}
+        title={events.weekAgenda.section.title}
+        subtitle={events.weekAgenda.section.subtitle}
+        variant={events.weekAgenda.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {agenda.intro}
+          {events.weekAgenda.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
           <div className="grid md:grid-cols-7">
-            {weekAgenda.map((day, i) => (
+            {events.weekAgenda.days.map((day, i) => (
               <div 
                 key={i}
                 className={`p-4 border-b md:border-b-0 md:border-r border-[var(--border)] last:border-r-0 ${
@@ -105,24 +89,24 @@ export function EventsPage() {
         </div>
 
         <div className="text-center mt-8">
-          <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={agenda.ctaHref}>
+          <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={events.weekAgenda.cta.href}>
             <CalendarIcon />
-            {agenda.ctaLabel}
+            {events.weekAgenda.cta.label}
             <span aria-hidden>→</span>
           </a>
         </div>
       </Section>
 
       <Section
-        id="kalender"
-        title={calendar.title}
-        subtitle={calendar.subtitle}
-        variant="plain"
+        id={events.calendar.section.id}
+        title={events.calendar.section.title}
+        subtitle={events.calendar.section.subtitle}
+        variant={events.calendar.section.variant}
       >
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
             <div className="px-6 py-4 border-b border-[var(--border)] flex items-center justify-between">
-              <h3 className="text-lg tracking-wider">{calendar.month}</h3>
+              <h3 className="text-lg tracking-wider">{events.calendar.month}</h3>
               <span className="text-xs text-[var(--muted-foreground)]">Arendonk · The Royal Falcon</span>
             </div>
             <div className="grid grid-cols-7 text-xs text-[var(--muted-foreground)] border-b border-[var(--border)]">
@@ -133,7 +117,7 @@ export function EventsPage() {
               ))}
             </div>
             <div className="grid grid-rows-5">
-              {calendar.weeks.map((week, row) => (
+              {events.calendar.weeks.map((week, row) => (
                 <div key={row} className="grid grid-cols-7 border-b border-[var(--border)] last:border-b-0">
                   {week.days.map((day, col) => (
                     <div key={`${row}-${col}`} className="min-h-[88px] border-r border-[var(--border)] last:border-r-0 p-2">
@@ -158,10 +142,12 @@ export function EventsPage() {
 
           <div className="space-y-4">
             <div className="glass-card rounded-[var(--radius-card)] p-6">
-              <h3 className="text-lg tracking-wider">{calendar.highlightsTitle}</h3>
-              <p className="mt-2 text-sm text-[var(--muted-foreground)]">{calendar.highlightsIntro}</p>
+              <h3 className="text-lg tracking-wider">Highlights deze maand</h3>
+              <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+                Van live sport tot quiz night: plan je avond op basis van jouw favoriete event.
+              </p>
               <ul className="mt-4 space-y-4">
-                {calendar.highlights.map((item) => (
+                {events.calendar.highlights.map((item) => (
                   <li key={item.title} className="border-b border-[var(--border)] pb-3 last:border-b-0">
                     <p className="text-xs text-[var(--muted-foreground)]">{item.date}</p>
                     <p className="text-sm text-[var(--foreground)] font-medium">{item.title}</p>
@@ -172,43 +158,55 @@ export function EventsPage() {
             </div>
 
             <div className="glass-card rounded-[var(--radius-card)] p-6">
-              <h3 className="text-lg tracking-wider">{calendar.planTitle}</h3>
-              <p className="mt-2 text-sm text-[var(--muted-foreground)]">{calendar.planIntro}</p>
+              <h3 className="text-lg tracking-wider">{events.calendar.planVisit.title}</h3>
+              <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+                {events.calendar.planVisit.description}
+              </p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={calendar.planPrimaryCta.href}>
-                  {calendar.planPrimaryCta.label}
-                  <span aria-hidden>→</span>
-                </a>
-                <a className="cta-link bg-[var(--muted)] text-[var(--foreground)]" href={calendar.planSecondaryCta.href}>
-                  {calendar.planSecondaryCta.label}
-                  <span aria-hidden>→</span>
-                </a>
+                {events.calendar.planVisit.ctas.map((cta) => (
+                  <a
+                    key={cta.href}
+                    className={`cta-link ${
+                      cta.style === 'secondary'
+                        ? 'bg-[var(--secondary)] text-[var(--secondary-foreground)]'
+                        : 'bg-[var(--muted)] text-[var(--foreground)]'
+                    }`}
+                    href={cta.href}
+                  >
+                    {cta.label}
+                    <span aria-hidden>→</span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </Section>
 
-      <ParallaxSection id="events-parallax-1" imageSrc="/parallax/para-6.png" height="md" />
+      <ParallaxSection
+        id={events.parallax[0].id}
+        imageSrc={events.parallax[0].imageSrc}
+        height={events.parallax[0].height}
+      />
 
       {/* Live TV Sports Section - Wigggle UI inspired */}
       <Section
-        id="live-sport"
-        title={liveSport.title}
-        subtitle={liveSport.subtitle}
-        variant="plain"
+        id={events.liveSport.section.id}
+        title={events.liveSport.section.title}
+        subtitle={events.liveSport.section.subtitle}
+        variant={events.liveSport.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {liveSport.intro}
+          {events.liveSport.intro}
         </p>
         <div className="grid gap-6 lg:grid-cols-[260px_1fr] items-center mb-8">
           <div className="flex justify-center lg:justify-start">
             <SportsSm01Widget />
           </div>
           <div className="glass-card rounded-[var(--radius-card)]">
-            <h3 className="text-lg tracking-wider">{liveSport.highlightsTitle}</h3>
+            <h3 className="text-lg tracking-wider">{events.liveSport.highlight.title}</h3>
             <p className="mt-3 text-sm text-[var(--muted-foreground)]">
-              {liveSport.highlightsIntro}
+              {events.liveSport.highlight.description}
             </p>
           </div>
         </div>
@@ -222,8 +220,8 @@ export function EventsPage() {
                   <TvIcon />
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium tracking-wide">{liveSport.upcomingTitle}</h3>
-                  <p className="text-xs text-[var(--muted-foreground)]">{liveSport.upcomingSubtitle}</p>
+                  <h3 className="text-lg font-medium tracking-wide">Komende Wedstrijden</h3>
+                  <p className="text-xs text-[var(--muted-foreground)]">Live op onze schermen</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -234,7 +232,7 @@ export function EventsPage() {
 
             {/* Match List */}
             <div className="divide-y divide-[var(--border)]">
-              {liveMatches.map((match, i) => (
+              {events.liveSport.matches.map((match, i) => (
                 <div 
                   key={i}
                   className="px-6 py-4 hover:bg-[var(--accent)] transition-colors"
@@ -295,14 +293,14 @@ export function EventsPage() {
                   <TrophyIcon />
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium tracking-wide">{liveSport.recentTitle}</h3>
-                  <p className="text-xs text-[var(--muted-foreground)]">{liveSport.recentSubtitle}</p>
+                  <h3 className="text-lg font-medium tracking-wide">Recente Uitslagen</h3>
+                  <p className="text-xs text-[var(--muted-foreground)]">Afgelopen wedstrijden</p>
                 </div>
               </div>
 
               {/* Results List */}
               <div className="divide-y divide-[var(--border)]">
-                {recentResults.map((result, i) => (
+                {events.liveSport.results.map((result, i) => (
                   <div key={i} className="px-6 py-4">
                     <span className="text-xs text-[var(--primary)] font-medium">{result.competition}</span>
                     <div className="flex items-center justify-between mt-2">
@@ -327,19 +325,19 @@ export function EventsPage() {
             <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
               {/* Widget Header */}
               <div className="px-6 py-4 border-b border-[var(--border)]">
-                <h3 className="text-lg font-medium tracking-wide">{liveSport.standingsTitle}</h3>
-                <p className="text-xs text-[var(--muted-foreground)]">{liveSport.standingsSubtitle}</p>
+                <h3 className="text-lg font-medium tracking-wide">Standen</h3>
+                <p className="text-xs text-[var(--muted-foreground)]">Top 5 per competitie</p>
               </div>
 
               <div className="p-6 grid gap-6 sm:grid-cols-2">
-                {standings.map((league) => (
-                  <div key={league.league} className="space-y-2">
+                {events.liveSport.standings.map((group) => (
+                  <div key={group.league} className="space-y-2">
                     <h4 className="text-sm font-semibold text-[var(--primary)] flex items-center gap-2">
                       <span className="w-1 h-4 bg-[var(--primary)] rounded-full" />
-                      {league.league}
+                      {group.league}
                     </h4>
                     <div className="space-y-1">
-                      {league.teams.map((team) => (
+                      {group.teams.map((team) => (
                         <div 
                           key={team.pos} 
                           className={`flex justify-between items-center text-xs py-2 px-3 rounded-lg ${
@@ -368,29 +366,33 @@ export function EventsPage() {
         </div>
       </Section>
 
-      <ParallaxSection id="events-parallax-2" imageSrc="/parallax/para-8.png" height="sm" />
+      <ParallaxSection
+        id={events.parallax[1].id}
+        imageSrc={events.parallax[1].imageSrc}
+        height={events.parallax[1].height}
+      />
 
       {/* Main Events */}
       <Section
-        id="main-events"
-        title={mainEvents.title}
-        subtitle={mainEvents.subtitle}
-        variant="muted"
+        id={events.mainEvents.section.id}
+        title={events.mainEvents.section.title}
+        subtitle={events.mainEvents.section.subtitle}
+        variant={events.mainEvents.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {mainEvents.intro}
+          {events.mainEvents.intro}
         </p>
         <CardGrid columns={3}>
-          {mainEvents.items.map((item) => (
+          {events.mainEvents.cards.map((card) => (
             <Card
-              key={item.title}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              imageAlt={item.imageAlt}
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              imageAlt={card.imageAlt}
               footer={
                 <ul className="space-y-2 text-sm">
-                  {item.bullets.map((bullet) => (
+                  {card.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-center gap-2 text-[var(--muted-foreground)]">
                       <CheckIcon />
                       <span>{bullet}</span>
@@ -405,32 +407,38 @@ export function EventsPage() {
 
       {/* Special Events CTA */}
       <Section
-        id="special-events"
-        title={specialEvents.title}
-        subtitle={specialEvents.subtitle}
-        variant="plain"
+        id={events.specialEvents.section.id}
+        title={events.specialEvents.section.title}
+        subtitle={events.specialEvents.section.subtitle}
+        variant={events.specialEvents.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {specialEvents.intro}
+          {events.specialEvents.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-8 text-center">
           <p className="text-[var(--muted-foreground)] max-w-2xl mx-auto mb-6">
-            {specialEvents.cardText}
+            {events.specialEvents.card.description}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={specialEvents.primaryCta.href}>
-              {specialEvents.primaryCta.label}
-              <span aria-hidden>→</span>
-            </a>
-            <a 
-              className="cta-link bg-[var(--muted)] text-[var(--foreground)]" 
-              href={specialEvents.secondaryCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {specialEvents.secondaryCta.label}
-              <span aria-hidden>→</span>
-            </a>
+            {events.specialEvents.card.ctas.map((cta) => {
+              const isExternal = cta.href.startsWith('http')
+              return (
+                <a
+                  key={cta.href}
+                  className={`cta-link ${
+                    cta.style === 'secondary'
+                      ? 'bg-[var(--secondary)] text-[var(--secondary-foreground)]'
+                      : 'bg-[var(--muted)] text-[var(--foreground)]'
+                  }`}
+                  href={cta.href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                >
+                  {cta.label}
+                  <span aria-hidden>→</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </Section>

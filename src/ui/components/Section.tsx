@@ -1,20 +1,23 @@
 import type { ReactNode } from 'react'
 
+type SectionVariant = 'plain' | 'muted' | 'decorated'
+
 export function Section(props: {
   id?: string
   title: string
   subtitle?: string
   children: ReactNode
-  variant?: 'plain' | 'muted' | 'decorated'
+  variant?: SectionVariant | (string & {})
   /** Center the title and subtitle */
   centered?: boolean
   /** Hide title if empty */
   hideTitle?: boolean
 }) {
+  const variant = props.variant as SectionVariant | undefined
   const variantClass =
-    props.variant === 'muted'
+    variant === 'muted'
       ? 'bg-muted'
-      : props.variant === 'decorated'
+      : variant === 'decorated'
         ? 'section-decorated'
         : ''
 

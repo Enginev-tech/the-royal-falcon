@@ -1,0 +1,219 @@
+{
+  "seo": {
+    "title": "Events: live sport, quiz night & meer",
+    "description": "Bekijk onze agenda voor live sport, quiz nights en speciale events bij The Royal Falcon in Arendonk. Elke week iets nieuws te beleven!",
+    "path": "/events"
+  },
+  "weekAgenda": {
+    "section": {
+      "id": "agenda",
+      "title": "Week Agenda",
+      "subtitle": "Deze week bij The Royal Falcon — plan je bezoek!",
+      "variant": "decorated"
+    },
+    "intro": "Ontdek de vaste events in Arendonk, van quiz night en live sport tot DJ-sets en snookertoernooien. Combineer je bezoek met diner, cocktails en bar bites voor een complete avond uit.",
+    "days": [
+      { "day": "Maandag", "date": "13 jan", "events": ["Happy Hour 17:00-19:00"], "special": false },
+      { "day": "Dinsdag", "date": "14 jan", "events": ["SV Valkenhof Training 19:00", "Quiz Night 21:00"], "special": true },
+      { "day": "Woensdag", "date": "15 jan", "events": ["Champions League Live", "Cocktail Wednesday"], "special": true },
+      { "day": "Donderdag", "date": "16 jan", "events": ["SV Valkenhof Competitie 19:00"], "special": false },
+      { "day": "Vrijdag", "date": "17 jan", "events": ["Live DJ 21:00", "Extended Happy Hour"], "special": true },
+      { "day": "Zaterdag", "date": "18 jan", "events": ["Premier League Marathon", "Snooker Toernooi 14:00"], "special": true },
+      { "day": "Zondag", "date": "19 jan", "events": ["Sunday Brunch 11:00-15:00", "Eredivisie Live"], "special": false }
+    ],
+    "cta": { "label": "Bekijk volledige kalender", "href": "/contact" }
+  },
+  "calendar": {
+    "section": {
+      "id": "kalender",
+      "title": "Volledige Kalender",
+      "subtitle": "Een volledig maandoverzicht met alle events, live sport en special nights.",
+      "variant": "plain"
+    },
+    "month": "Januari 2026",
+    "weeks": [
+      {
+        "days": [
+          { "day": null },
+          { "day": null },
+          { "day": null },
+          { "day": 1, "events": ["Nieuwjaarsbrunch 11:00"] },
+          { "day": 2, "events": ["Afterwork Cocktails 18:00"] },
+          { "day": 3, "events": ["DJ Night 21:00"] },
+          { "day": 4 }
+        ]
+      },
+      {
+        "days": [
+          { "day": 5 },
+          { "day": 6, "events": ["Quiz Night 21:00"] },
+          { "day": 7, "events": ["Champions League Live"] },
+          { "day": 8 },
+          { "day": 9, "events": ["Happy Hour 17:00-19:00"] },
+          { "day": 10, "events": ["Live Sport Special"] },
+          { "day": 11, "events": ["Sunday Brunch"] }
+        ]
+      },
+      {
+        "days": [
+          { "day": 12 },
+          { "day": 13, "events": ["SV Valkenhof Training 19:00"] },
+          { "day": 14, "events": ["Quiz Night 21:00"] },
+          { "day": 15, "events": ["Cocktail Wednesday"] },
+          { "day": 16, "events": ["Live DJ 21:00"] },
+          { "day": 17, "events": ["Premier League Marathon"] },
+          { "day": 18, "events": ["Eredivisie Live"] }
+        ]
+      },
+      {
+        "days": [
+          { "day": 19 },
+          { "day": 20, "events": ["SV Valkenhof Competitie 19:00"] },
+          { "day": 21, "events": ["Champions League Live"] },
+          { "day": 22 },
+          { "day": 23, "events": ["Live DJ 21:00"] },
+          { "day": 24, "events": ["Snooker Toernooi 14:00"] },
+          { "day": 25, "events": ["Sunday Brunch"] }
+        ]
+      },
+      {
+        "days": [
+          { "day": 26 },
+          { "day": 27, "events": ["Quiz Night 21:00"] },
+          { "day": 28, "events": ["Cocktail Wednesday"] },
+          { "day": 29 },
+          { "day": 30, "events": ["Happy Hour 17:00-19:00"] },
+          { "day": 31, "events": ["DJ Night 21:00"] },
+          { "day": null }
+        ]
+      }
+    ],
+    "highlights": [
+      { "date": "6 jan · 21:00", "title": "Quiz Night", "desc": "Test je kennis met vrienden en win prijzen. Teams tot 6 personen." },
+      { "date": "10 jan · 15:00", "title": "Live Sport Special", "desc": "Premier League en Champions League live op groot scherm." },
+      { "date": "17 jan · 14:00", "title": "Snooker Toernooi", "desc": "Open toernooi voor alle niveaus, inschrijven aan de bar." },
+      { "date": "23 jan · 21:00", "title": "Weekend DJ Night", "desc": "Cocktails, bar bites en DJ sets tot laat." }
+    ],
+    "planVisit": {
+      "title": "Plan je bezoek",
+      "description": "Reserveer op tijd voor drukke matchdagen of events. Wij houden graag een tafel voor je vrij.",
+      "ctas": [
+        { "label": "Reserveer nu", "href": "/contact#booking", "style": "secondary" },
+        { "label": "Vraag info", "href": "/contact", "style": "muted" }
+      ]
+    }
+  },
+  "parallax": [
+    { "id": "events-parallax-1", "imageSrc": "/parallax/para-6.png", "height": "md" },
+    { "id": "events-parallax-2", "imageSrc": "/parallax/para-8.png", "height": "sm" }
+  ],
+  "liveSport": {
+    "section": {
+      "id": "live-sport",
+      "title": "Live Sport op TV",
+      "subtitle": "Alle grote wedstrijden op onze grote schermen — met bier, bites en sfeer!",
+      "variant": "plain"
+    },
+    "intro": "Beleef live sport in Arendonk met topcompetities zoals Champions League, Premier League en de Jupiler Pro League. Reserveer een tafel en geniet van de beste matchen met bar bites en cocktails.",
+    "highlight": {
+      "title": "Live Highlights",
+      "description": "Elke week een mix van topwedstrijden, derby’s en toernooien. Op grote schermen, met perfecte zichtlijnen en een bar die klaarstaat met cocktails, speciaalbieren en bar bites."
+    },
+    "matches": [
+      { "time": "20:45", "competition": "Champions League", "home": "Arsenal", "away": "Bayern München", "channel": "VTM 2" },
+      { "time": "21:00", "competition": "Champions League", "home": "Real Madrid", "away": "Napoli", "channel": "Play Sports" },
+      { "time": "15:00", "competition": "Premier League", "home": "Liverpool", "away": "Man United", "channel": "Play Sports" },
+      { "time": "17:30", "competition": "Premier League", "home": "Arsenal", "away": "Chelsea", "channel": "Play Sports" },
+      { "time": "14:30", "competition": "Eredivisie", "home": "PSV", "away": "Ajax", "channel": "ESPN" },
+      { "time": "20:00", "competition": "Jupiler Pro League", "home": "Club Brugge", "away": "Anderlecht", "channel": "Eleven Sports" }
+    ],
+    "results": [
+      { "competition": "Champions League", "home": "Bayern München", "homeScore": 3, "away": "Man United", "awayScore": 0 },
+      { "competition": "Champions League", "home": "Real Madrid", "homeScore": 1, "away": "RB Leipzig", "awayScore": 1 },
+      { "competition": "Premier League", "home": "Liverpool", "homeScore": 4, "away": "Chelsea", "awayScore": 1 },
+      { "competition": "Eredivisie", "home": "Ajax", "homeScore": 2, "away": "Feyenoord", "awayScore": 3 }
+    ],
+    "standings": [
+      {
+        "league": "Premier League",
+        "teams": [
+          { "pos": 1, "team": "Liverpool", "pts": 46 },
+          { "pos": 2, "team": "Arsenal", "pts": 44 },
+          { "pos": 3, "team": "Chelsea", "pts": 40 },
+          { "pos": 4, "team": "Man City", "pts": 38 },
+          { "pos": 5, "team": "Nottingham", "pts": 37 }
+        ]
+      },
+      {
+        "league": "Jupiler Pro League",
+        "teams": [
+          { "pos": 1, "team": "KRC Genk", "pts": 45 },
+          { "pos": 2, "team": "Club Brugge", "pts": 42 },
+          { "pos": 3, "team": "Union SG", "pts": 38 },
+          { "pos": 4, "team": "Anderlecht", "pts": 36 },
+          { "pos": 5, "team": "Antwerp", "pts": 33 }
+        ]
+      }
+    ]
+  },
+  "mainEvents": {
+    "section": {
+      "id": "main-events",
+      "title": "Vaste Events",
+      "subtitle": "Elke week terugkerende highlights bij The Royal Falcon.",
+      "variant": "muted"
+    },
+    "intro": "Onze vaste events zorgen elke week voor sfeer in Arendonk: quiz night, live sport en weekend vibes. Kom langs met vrienden of collega’s en maak van je avond een beleving.",
+    "cards": [
+      {
+        "title": "Quiz Night",
+        "description": "Elke dinsdag om 21:00. Stel je team samen en win mooie prijzen!",
+        "image": "/events/quiz.png",
+        "imageAlt": "Quiz Night",
+        "bullets": [
+          "Teams van max 6 personen",
+          "Gratis deelname",
+          "Prijzen voor top 3"
+        ]
+      },
+      {
+        "title": "Live Sport",
+        "description": "Champions League, Premier League, Eredivisie en meer op grote schermen.",
+        "image": "/events/sport.png",
+        "imageAlt": "Live Sport",
+        "bullets": [
+          "Meerdere grote schermen",
+          "Speciale match menu's",
+          "Reserveren aanbevolen"
+        ]
+      },
+      {
+        "title": "Weekend Vibes",
+        "description": "Vrijdag en zaterdag: DJ sets, cocktails en een fantastische sfeer.",
+        "image": "/events/dj.png",
+        "imageAlt": "Weekend DJ",
+        "bullets": [
+          "DJ vanaf 21:00",
+          "Cocktail specials",
+          "Dansen toegestaan"
+        ]
+      }
+    ]
+  },
+  "specialEvents": {
+    "section": {
+      "id": "special-events",
+      "title": "Speciale Events",
+      "subtitle": "Van privéfeesten tot bedrijfsevenementen — wij maken het mogelijk.",
+      "variant": "plain"
+    },
+    "intro": "Organiseer een privéfeest, verjaardagsdiner of bedrijfsborrel in Arendonk. Wij verzorgen ruimte, catering, entertainment en een team dat alles tot in de puntjes regelt.",
+    "card": {
+      "description": "Wil je een privéfeest, bedrijfsevenement of sporttoernooi organiseren bij The Royal Falcon? We hebben ruimte, faciliteiten en een team dat klaarstaat om je event onvergetelijk te maken.",
+      "ctas": [
+        { "label": "Neem contact op", "href": "/contact", "style": "secondary" },
+        { "label": "Volg ons op Facebook", "href": "https://www.facebook.com/theroyalfalcon", "style": "muted" }
+      ]
+    }
+  }
+}

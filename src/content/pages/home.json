@@ -1,0 +1,116 @@
+{
+  "seo": {
+    "title": "Restaurant, bar & entertainment in Arendonk",
+    "description": "The Royal Falcon in Arendonk: restaurant, cocktails en entertainment (snooker, biljart, darts). Reserveer een tafel of ontdek onze events en live sports.",
+    "path": "/"
+  },
+  "mainEvent": {
+    "section": {
+      "id": "main-event",
+      "title": "Main Event",
+      "subtitle": "Beleef een avond uit in Arendonk met chef specials, signature cocktails en entertainment.",
+      "variant": "decorated"
+    },
+    "image": {
+      "src": "/events/championsleague.webp",
+      "alt": "Royal Night bij The Royal Falcon",
+      "badge": "ELKE VRIJDAG & ZATERDAG"
+    },
+    "content": {
+      "heading": "Royal Night",
+      "description": "Live entertainment, cocktails en specials - ideaal voor een avond met vrienden of collega's. Van casual borrel tot main event: dit is The Royal Falcon.",
+      "bullets": [
+        "Snooker, biljart, darts & FIFA",
+        "Signature cocktails & bar bites",
+        "Live sports op groot scherm",
+        "Events & feesten op maat"
+      ],
+      "ctas": [
+        { "label": "Bekijk agenda", "href": "/events", "style": "secondary" },
+        { "label": "Reserveer", "href": "/contact#booking", "style": "muted" }
+      ]
+    }
+  },
+  "parallax": [
+    { "id": "home-parallax", "imageSrc": "/parallax/muppie-parallax.png", "height": "md" },
+    { "id": "home-parallax-2", "imageSrc": "/parallax/para-1.png", "height": "sm" }
+  ],
+  "services": {
+    "section": {
+      "id": "services",
+      "title": "Services",
+      "subtitle": "Alles onder een dak in Arendonk: restaurant, bar, entertainment en events.",
+      "variant": "plain"
+    },
+    "intro": "The Royal Falcon is de all‑in‑one hotspot in Arendonk: kom eten, drink een cocktail aan de bar en geniet van entertainment zoals snooker en darts. Ideaal voor dates, groepen en bedrijfsuitjes.",
+    "cards": [
+      {
+        "title": "Eten",
+        "description": "Chef specials, lunch en diner - ideaal voor een gezellige avond uit in Arendonk.",
+        "image": "/cards/landscape-food.png",
+        "imageAlt": "Chef special gerecht",
+        "cta": { "label": "Bekijk menu", "href": "/eten" }
+      },
+      {
+        "title": "Drinken",
+        "description": "Cocktails, wijnen en bar classics. Perfect voor afterwork of borrel met stijl.",
+        "image": "/cards/cocktail-red.png",
+        "imageAlt": "Signature cocktail",
+        "cta": { "label": "Ontdek bar", "href": "/drinken" }
+      },
+      {
+        "title": "Entertainment",
+        "description": "Snooker, biljart, darts en FIFA: game night met sfeer in Arendonk.",
+        "image": "/hero/hero-snooker.png",
+        "imageAlt": "Snooker tafel",
+        "cta": { "label": "Bekijk activiteiten", "href": "/entertainment" }
+      },
+      {
+        "title": "Events",
+        "description": "Week agenda, live sports en main events. Van UFC tot Champions League.",
+        "image": "/events/championsleague.webp",
+        "imageAlt": "Champions League event",
+        "cta": { "label": "Bekijk events", "href": "/events" }
+      }
+    ]
+  },
+  "menus": {
+    "section": {
+      "id": "menus",
+      "title": "Menu's",
+      "subtitle": "Ontdek ons eten, onze cocktails en bar bites.",
+      "variant": "muted"
+    },
+    "intro": "Van lunch en diner tot cocktails en desserts: onze menu’s zijn samengesteld voor elke smaak. Perfect voor een avond uit in Arendonk of een ontspannen borrel met vrienden.",
+    "cards": [
+      {
+        "title": "Eten",
+        "description": "Lunch - Diner - Kids - Borrel (bar bites)",
+        "image": "/cards/card-steak.png",
+        "imageAlt": "Steak gerecht",
+        "cta": { "label": "Naar eten", "href": "/eten" }
+      },
+      {
+        "title": "Drinken",
+        "description": "Cocktails - Drankkaart - Zoetigheden",
+        "image": "/cards/card-wine.png",
+        "imageAlt": "Wijnen en cocktails",
+        "cta": { "label": "Naar drinken", "href": "/drinken" }
+      },
+      {
+        "title": "Snacks",
+        "description": "Bar bites & small plates - ideaal om te delen",
+        "image": "/cards/card-chacutrie.png",
+        "imageAlt": "Charcuterie plank",
+        "cta": { "label": "Bekijk snacks", "href": "/eten#borrel" }
+      },
+      {
+        "title": "Desserts",
+        "description": "Huisgemaakte desserts & zoete verwennerijen",
+        "image": "/cards/card-ceasar.png",
+        "imageAlt": "Dessert",
+        "cta": { "label": "Bekijk desserts", "href": "/drinken#zoet" }
+      }
+    ]
+  }
+}

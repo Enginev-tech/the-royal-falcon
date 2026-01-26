@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+type ParallaxHeight = 'sm' | 'md' | 'lg'
+
 type ParallaxSectionProps = {
   id?: string
   title?: string
@@ -7,10 +9,10 @@ type ParallaxSectionProps = {
   children?: ReactNode
   imageSrc?: string
   videoSrc?: string
-  height?: 'sm' | 'md' | 'lg'
+  height?: ParallaxHeight | (string & {})
 }
 
-const heightClass: Record<NonNullable<ParallaxSectionProps['height']>, string> = {
+const heightClass: Record<ParallaxHeight, string> = {
   sm: 'min-h-[30vh]',
   md: 'min-h-[45vh]',
   lg: 'min-h-[60vh]',
@@ -30,7 +32,7 @@ const parallaxImageClass: Record<string, string> = {
 }
 
 export function ParallaxSection(props: ParallaxSectionProps) {
-  const h = heightClass[props.height ?? 'md']
+  const h = heightClass[props.height as ParallaxHeight] ?? heightClass.md
 
   // For images: use CSS background with fixed attachment for true parallax
   if (props.imageSrc && !props.videoSrc) {

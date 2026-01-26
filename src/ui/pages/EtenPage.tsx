@@ -4,7 +4,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { useSeo } from '../useSeo'
 import { menuData } from '../content/menus'
-import etenContent from '../../../content/pages/eten.json'
+import eten from '../../content/pages/eten.json'
 
 // Solid Icon
 function CheckIcon() {
@@ -65,124 +65,113 @@ function MenuBlock(props: {
 }
 
 export function EtenPage() {
-  useSeo({
-    title: etenContent.seo.title,
-    description: etenContent.seo.description,
-    path: '/eten',
-  })
+  useSeo(eten.seo)
 
   return (
     <div>
       {/* Hero section met chef specials */}
       <Section
-        id="chef-specials"
-        title={etenContent.chefSpecials.title}
-        subtitle={etenContent.chefSpecials.subtitle}
-        variant="decorated"
+        id={eten.chefSpecials.section.id}
+        title={eten.chefSpecials.section.title}
+        subtitle={eten.chefSpecials.section.subtitle}
+        variant={eten.chefSpecials.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {etenContent.chefSpecials.intro}
+          {eten.chefSpecials.intro}
         </p>
         <CardGrid columns={4}>
-          <Card
-            title="Steak Royal"
-            description="Onze signature steak: malse entrecote van 300g, gebakken zoals jij het wilt. Geserveerd met seizoensgroenten, huisgemaakte frieten en een saus naar keuze."
-            image="/cards/card-steak.png"
-            imageAlt="Royal steak special"
-          />
-          <Card
-            title="Caesar Salad"
-            description="De klassieker die nooit verveelt. Knapperige romaine sla, huisgemaakte Caesar dressing, verse parmezaan en krokante croutons."
-            image="/cards/card-ceasar.png"
-            imageAlt="Caesar salad"
-          />
-          <Card
-            title="Charcuterie Platter"
-            description="Ideaal om te delen: een selectie van de beste vleeswaren, kazen, olijven, huisgemaakte dips en vers brood."
-            image="/cards/card-chacutrie.png"
-            imageAlt="Charcuterie plank"
-          />
-          <Card
-            title="Pasta del Giorno"
-            description="Dagverse pasta met seizoensgebonden ingrediënten. Vraag onze server naar de pasta van vandaag."
-            image="/cards/landscape-food.png"
-            imageAlt="Pasta special"
-          />
+          {eten.chefSpecials.cards.map((card) => (
+            <Card
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              imageAlt={card.imageAlt}
+            />
+          ))}
         </CardGrid>
       </Section>
 
-      <ParallaxSection id="eten-parallax" imageSrc="/parallax/para-5.png" height="md" />
+      <ParallaxSection
+        id={eten.parallax[0].id}
+        imageSrc={eten.parallax[0].imageSrc}
+        height={eten.parallax[0].height}
+      />
 
       {/* Lunch Menu */}
       <Section
-        id="lunch"
-        title={etenContent.lunch.title}
-        subtitle={etenContent.lunch.subtitle}
-        variant="plain"
+        id={eten.lunch.section.id}
+        title={eten.lunch.section.title}
+        subtitle={eten.lunch.section.subtitle}
+        variant={eten.lunch.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {etenContent.lunch.intro}
+          {eten.lunch.intro}
         </p>
         <MenuBlock categories={menuData.lunch.categories} />
       </Section>
 
       {/* Diner Menu */}
       <Section
-        id="diner"
-        title={etenContent.diner.title}
-        subtitle={etenContent.diner.subtitle}
-        variant="muted"
+        id={eten.diner.section.id}
+        title={eten.diner.section.title}
+        subtitle={eten.diner.section.subtitle}
+        variant={eten.diner.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {etenContent.diner.intro}
+          {eten.diner.intro}
         </p>
         <MenuBlock categories={menuData.diner.categories} />
       </Section>
 
-      <ParallaxSection id="eten-parallax-2" imageSrc="/parallax/para-3.png" height="sm" />
+      <ParallaxSection
+        id={eten.parallax[1].id}
+        imageSrc={eten.parallax[1].imageSrc}
+        height={eten.parallax[1].height}
+      />
 
       {/* Kids Menu */}
       <Section
-        id="kids"
-        title={etenContent.kids.title}
-        subtitle={etenContent.kids.subtitle}
-        variant="plain"
+        id={eten.kids.section.id}
+        title={eten.kids.section.title}
+        subtitle={eten.kids.section.subtitle}
+        variant={eten.kids.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {etenContent.kids.intro}
+          {eten.kids.intro}
         </p>
         <MenuBlock categories={menuData.kids.categories} />
       </Section>
 
       {/* Bar Bites */}
       <Section
-        id="borrel"
-        title={etenContent.borrel.title}
-        subtitle={etenContent.borrel.subtitle}
-        variant="decorated"
+        id={eten.borrel.section.id}
+        title={eten.borrel.section.title}
+        subtitle={eten.borrel.section.subtitle}
+        variant={eten.borrel.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {etenContent.borrel.intro}
+          {eten.borrel.intro}
         </p>
         <MenuBlock categories={menuData.borrel.categories} />
       </Section>
 
       {/* Reservation CTA */}
       <Section
-        id="reservation"
-        title={etenContent.reservation.title}
-        subtitle={etenContent.reservation.subtitle}
-        variant="muted"
+        id={eten.reservation.section.id}
+        title={eten.reservation.section.title}
+        subtitle={eten.reservation.section.subtitle}
+        variant={eten.reservation.section.variant}
       >
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl tracking-wider">{etenContent.reservation.cardTitle}</h3>
+              <h3 className="text-2xl tracking-wider">{eten.reservation.card.heading}</h3>
               <p className="mt-3 text-[var(--muted-foreground)] leading-relaxed">
-                {etenContent.reservation.cardIntro}
+                {eten.reservation.card.description}
               </p>
               <ul className="mt-6 space-y-3 text-sm text-[var(--muted-foreground)]">
-                {etenContent.reservation.bullets.map((bullet) => (
+                {eten.reservation.card.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-center gap-3">
                     <CheckIcon />
                     {bullet}
@@ -190,26 +179,28 @@ export function EtenPage() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]" href={etenContent.reservation.primaryCta.href}>
-                  {etenContent.reservation.primaryCta.label}
-                  <span aria-hidden>→</span>
-                </a>
-                <a
-                  className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
-                  href={etenContent.reservation.secondaryCta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {etenContent.reservation.secondaryCta.label}
-                  <span aria-hidden>→</span>
-                </a>
+                {eten.reservation.card.ctas.map((cta) => {
+                  const isExternal = cta.href.startsWith('http')
+                  return (
+                    <a
+                      key={cta.href}
+                      className="cta-link bg-[var(--secondary)] text-[var(--secondary-foreground)]"
+                      href={cta.href}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                    >
+                      {cta.label}
+                      <span aria-hidden>→</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
 
             <div className="relative">
               <img
-                src="/hero/hero-food.png"
-                alt="Tafel setting bij The Royal Falcon"
+                src={eten.reservation.card.image.src}
+                alt={eten.reservation.card.image.alt}
                 className="w-full h-full object-cover rounded-[var(--radius-card)] aspect-[4/3]"
                 loading="lazy"
               />

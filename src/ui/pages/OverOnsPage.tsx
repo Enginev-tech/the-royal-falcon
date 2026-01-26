@@ -2,7 +2,7 @@ import { ParallaxSection } from '../components/ParallaxSection'
 import { Section } from '../components/Section'
 import { TeamSection } from '../components/TeamSection'
 import { useSeo } from '../useSeo'
-import overOnsContent from '../../../content/pages/over-ons.json'
+import overOns from '../../content/pages/over-ons.json'
 
 // Solid Icons
 function QualityIcon() {
@@ -39,16 +39,12 @@ function CommunityIcon() {
 }
 
 export function OverOnsPage() {
-  useSeo({
-    title: overOnsContent.seo.title,
-    description: overOnsContent.seo.description,
-    path: '/over-ons',
-  })
+  useSeo(overOns.seo)
 
-  const valueIconMap: Record<string, JSX.Element> = {
+  const valueIcons = {
     quality: <QualityIcon />,
-    heart: <HeartIcon />,
-    game: <GameIcon />,
+    hospitality: <HeartIcon />,
+    experience: <GameIcon />,
     community: <CommunityIcon />,
   }
 
@@ -56,27 +52,27 @@ export function OverOnsPage() {
     <div>
       {/* About Section */}
       <Section
-        id="about"
-        title={overOnsContent.about.title}
-        subtitle={overOnsContent.about.subtitle}
-        variant="decorated"
+        id={overOns.about.section.id}
+        title={overOns.about.section.title}
+        subtitle={overOns.about.section.subtitle}
+        variant={overOns.about.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {overOnsContent.about.intro}
+          {overOns.about.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div>
               <article className="space-y-4 text-[var(--muted-foreground)] leading-relaxed">
-                {overOnsContent.about.story.map((paragraph) => (
+                {overOns.about.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </article>
             </div>
             <div className="relative">
               <img
-                src="/hero/hero-bar01.png"
-                alt="The Royal Falcon bar interieur"
+                src={overOns.about.image.src}
+                alt={overOns.about.image.alt}
                 className="w-full rounded-[var(--radius-card)] aspect-[4/3] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-[var(--radius-card)]" />
@@ -85,22 +81,26 @@ export function OverOnsPage() {
         </div>
       </Section>
 
-      <ParallaxSection id="about-parallax" imageSrc="/parallax/para-6.png" height="md" />
+      <ParallaxSection
+        id={overOns.parallax[0].id}
+        imageSrc={overOns.parallax[0].imageSrc}
+        height={overOns.parallax[0].height}
+      />
 
       {/* Values */}
       <Section
-        id="values"
-        title={overOnsContent.values.title}
-        subtitle={overOnsContent.values.subtitle}
-        variant="plain"
+        id={overOns.values.section.id}
+        title={overOns.values.section.title}
+        subtitle={overOns.values.section.subtitle}
+        variant={overOns.values.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {overOnsContent.values.intro}
+          {overOns.values.intro}
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {overOnsContent.values.items.map((value) => (
+          {overOns.values.items.map((value) => (
             <div key={value.title} className="glass-card rounded-[var(--radius-card)] p-6 text-center">
-              <div className="flex justify-center mb-4">{valueIconMap[value.icon]}</div>
+              <div className="flex justify-center mb-4">{valueIcons[value.key as keyof typeof valueIcons]}</div>
               <h3 className="text-xl tracking-wider">{value.title}</h3>
               <p className="text-sm text-[var(--muted-foreground)] mt-3 leading-relaxed">{value.desc}</p>
             </div>
@@ -111,61 +111,62 @@ export function OverOnsPage() {
       {/* Team - Custom Design */}
       <TeamSection />
 
-      <ParallaxSection id="team-parallax" imageSrc="/parallax/para-1.png" height="sm" />
+      <ParallaxSection
+        id={overOns.parallax[1].id}
+        imageSrc={overOns.parallax[1].imageSrc}
+        height={overOns.parallax[1].height}
+      />
 
       {/* Location */}
       <Section
-        id="location"
-        title={overOnsContent.location.title}
-        subtitle={overOnsContent.location.subtitle}
-        variant="decorated"
+        id={overOns.location.section.id}
+        title={overOns.location.section.title}
+        subtitle={overOns.location.section.subtitle}
+        variant={overOns.location.section.variant}
       >
         <p className="text-sm text-[var(--muted-foreground)] max-w-3xl mx-auto text-center mb-8">
-          {overOnsContent.location.intro}
+          {overOns.location.intro}
         </p>
         <div className="glass-card rounded-[var(--radius-card)] p-6 md:p-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl tracking-wider">The Royal Falcon</h3>
+              <h3 className="text-2xl tracking-wider">{overOns.location.address.name}</h3>
               <address className="not-italic mt-4 space-y-2 text-[var(--muted-foreground)]">
-                <p className="text-[var(--foreground)] font-medium">De Valken 11</p>
-                <p>2360 Arendonk</p>
-                <p>België</p>
+                <p className="text-[var(--foreground)] font-medium">{overOns.location.address.street}</p>
+                <p>{overOns.location.address.city}</p>
+                <p>{overOns.location.address.country}</p>
               </address>
               <div className="mt-6 space-y-2 text-sm text-[var(--muted-foreground)]">
                 <p>
                   <span className="text-[var(--foreground)]">Tel:</span>{' '}
-                  <a href="tel:+32468303077" className="hover:text-[var(--foreground)]">+32 468 30 30 77</a>
+                  <a href={`tel:${overOns.location.address.phone}`} className="hover:text-[var(--foreground)]">
+                    {overOns.location.address.phone}
+                  </a>
                 </p>
                 <p>
                   <span className="text-[var(--foreground)]">Email:</span>{' '}
-                  <a href="mailto:info@theroyalfalcon.be" className="hover:text-[var(--foreground)]">info@theroyalfalcon.be</a>
+                  <a href={`mailto:${overOns.location.address.email}`} className="hover:text-[var(--foreground)]">
+                    {overOns.location.address.email}
+                  </a>
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-2xl tracking-wider">Openingstijden</h3>
               <ul className="mt-4 space-y-3">
-                <li className="flex justify-between border-b border-[var(--border)] pb-2">
-                  <span className="text-[var(--muted-foreground)]">Maandag</span>
-                  <span className="text-[var(--foreground)]">Gesloten</span>
-                </li>
-                <li className="flex justify-between border-b border-[var(--border)] pb-2">
-                  <span className="text-[var(--muted-foreground)]">Dinsdag - Donderdag</span>
-                  <span className="text-[var(--foreground)]">17:00 - 01:00</span>
-                </li>
-                <li className="flex justify-between border-b border-[var(--border)] pb-2">
-                  <span className="text-[var(--muted-foreground)]">Vrijdag</span>
-                  <span className="text-[var(--foreground)]">17:00 - 02:00</span>
-                </li>
-                <li className="flex justify-between border-b border-[var(--border)] pb-2">
-                  <span className="text-[var(--muted-foreground)]">Zaterdag</span>
-                  <span className="text-[var(--foreground)]">12:00 - 02:00</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-[var(--muted-foreground)]">Zondag</span>
-                  <span className="text-[var(--foreground)]">12:00 - 00:00</span>
-                </li>
+                {overOns.location.hours.map((hour, index) => (
+                  <li
+                    key={hour.label}
+                    className={`flex justify-between ${
+                      index === overOns.location.hours.length - 1
+                        ? ''
+                        : 'border-b border-[var(--border)] pb-2'
+                    }`}
+                  >
+                    <span className="text-[var(--muted-foreground)]">{hour.label}</span>
+                    <span className="text-[var(--foreground)]">{hour.value}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

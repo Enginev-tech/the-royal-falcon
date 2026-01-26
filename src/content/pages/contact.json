@@ -1,0 +1,123 @@
+{
+  "seo": {
+    "title": "Contact & reservatie – The Royal Falcon Arendonk",
+    "description": "Contacteer The Royal Falcon in Arendonk. Reserveer via WhatsApp of mail. Adres: De Valken 11, 2360 Arendonk.",
+    "path": "/contact"
+  },
+  "contact": {
+    "section": {
+      "id": "contact",
+      "title": "Neem Contact Op",
+      "subtitle": "Vragen, reservaties of gewoon even hallo zeggen? We horen graag van je.",
+      "variant": "decorated"
+    },
+    "intro": "Contact opnemen met The Royal Falcon in Arendonk is eenvoudig via WhatsApp, telefoon of e‑mail. We antwoorden snel op reservaties, vragen over events en groepsaanvragen.",
+    "cards": [
+      {
+        "key": "whatsapp",
+        "title": "WhatsApp",
+        "description": "De snelste manier om ons te bereiken"
+      },
+      {
+        "key": "email",
+        "title": "Email",
+        "description": "Voor vragen of reservaties"
+      },
+      {
+        "key": "phone",
+        "title": "Telefoon",
+        "description": "Bel ons direct"
+      }
+    ]
+  },
+  "parallax": [
+    { "id": "contact-parallax", "imageSrc": "/parallax/para-4.png", "height": "sm" }
+  ],
+  "visit": {
+    "section": {
+      "id": "adres",
+      "title": "Bezoek Ons",
+      "subtitle": "Centraal gelegen in Arendonk, met ruime parking in de buurt.",
+      "variant": "plain"
+    },
+    "intro": "Plan je route naar The Royal Falcon in Arendonk en geniet van een ontspannen avond uit. Dankzij de centrale ligging is ons restaurant makkelijk bereikbaar met auto of fiets.",
+    "addressTitle": "Adres",
+    "mapCta": { "label": "Bekijk op Google Maps", "href": "https://maps.google.com/?q=De+Valken+11+2360+Arendonk+Belgium" },
+    "hoursTitle": "Openingstijden",
+    "hours": [
+      { "label": "Maandag", "value": "Gesloten" },
+      { "label": "Dinsdag - Donderdag", "value": "17:00 - 01:00" },
+      { "label": "Vrijdag", "value": "17:00 - 02:00" },
+      { "label": "Zaterdag", "value": "12:00 - 02:00" },
+      { "label": "Zondag", "value": "12:00 - 00:00" }
+    ]
+  },
+  "booking": {
+    "section": {
+      "id": "booking",
+      "title": "Reserveer Je Tafel",
+      "subtitle": "Zeker zijn van je plekje? Vul het formulier in en we nemen snel contact op.",
+      "variant": "muted"
+    },
+    "intro": "Reserveer je tafel in Arendonk voor lunch, diner of een avond met live sport. We bevestigen je aanvraag zo snel mogelijk zodat je zorgeloos kunt genieten.",
+    "form": {
+      "sections": {
+        "personal": "Persoonlijke Gegevens",
+        "reservation": "Reservatie Details",
+        "notes": "Extra Opmerkingen"
+      },
+      "labels": {
+        "name": "Naam",
+        "phone": "Telefoon / WhatsApp",
+        "email": "Email",
+        "date": "Datum",
+        "time": "Tijd",
+        "persons": "Personen",
+        "occasion": "Gelegenheid"
+      },
+      "placeholders": {
+        "name": "Je volledige naam",
+        "phone": "+32 ...",
+        "email": "je@email.be (optioneel)",
+        "notes": "Dieetwensen, allergieën, speciale gelegenheid, of andere vragen..."
+      },
+      "options": {
+        "persons": [
+          { "label": "Aantal...", "value": "" },
+          { "label": "1 persoon", "value": "1" },
+          { "label": "2 personen", "value": "2" },
+          { "label": "3 personen", "value": "3" },
+          { "label": "4 personen", "value": "4" },
+          { "label": "5 personen", "value": "5" },
+          { "label": "6 personen", "value": "6" },
+          { "label": "7+ personen", "value": "7" }
+        ],
+        "occasion": [
+          { "label": "Selecteer (optioneel)", "value": "" },
+          { "label": "Diner", "value": "diner" },
+          { "label": "Lunch", "value": "lunch" },
+          { "label": "Borrel / Drinks", "value": "borrel" },
+          { "label": "Verjaardag", "value": "verjaardag" },
+          { "label": "Groepsreservatie", "value": "groep" },
+          { "label": "Privé Event", "value": "event" }
+        ]
+      },
+      "submit": "Reservatie Aanvragen",
+      "note": "We bevestigen je reservatie zo snel mogelijk via WhatsApp of telefoon."
+    }
+  },
+  "social": {
+    "section": {
+      "id": "social",
+      "title": "Volg Ons",
+      "subtitle": "Stay connected — updates, events en behind-the-scenes op onze socials.",
+      "variant": "decorated"
+    },
+    "intro": "Volg The Royal Falcon voor de laatste events, live sport aankondigingen en sfeerbeelden uit Arendonk. Zo mis je geen enkele special night of cocktail promo.",
+    "cards": [
+      { "key": "facebook", "label": "Facebook" },
+      { "key": "instagram", "label": "Instagram" },
+      { "key": "tiktok", "label": "TikTok" }
+    ]
+  }
+}
