@@ -29,6 +29,7 @@ export default defineConfig({
           { type: 'string', name: 'address', label: 'Address' },
           { type: 'string', name: 'whatsapp', label: 'WhatsApp' },
           { type: 'string', name: 'phone', label: 'Phone' },
+          { type: 'string', name: 'seoImage', label: 'SEO Image' },
           {
             type: 'object',
             name: 'social',

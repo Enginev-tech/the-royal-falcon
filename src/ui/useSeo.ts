@@ -27,9 +27,11 @@ export function useSeo(meta: {
   title: string
   description: string
   path?: string
+  image?: string
 }) {
   useEffect(() => {
     const fullTitle = `${meta.title} | ${site.name}`
+    const image = meta.image ?? site.seoImage
     document.title = fullTitle
 
     upsertMeta('description', meta.description)
@@ -39,6 +41,12 @@ export function useSeo(meta: {
     upsertProperty('og:description', meta.description)
     upsertProperty('og:type', 'website')
 
+    if (image) {
+      const imageUrl = image.startsWith('http') ? image : `${window.location.origin}${image}`
+      upsertProperty('og:image', imageUrl)
+      upsertMeta('twitter:image', imageUrl)
+    }
+
     if (meta.path) {
       const url = `${window.location.origin}${meta.path.startsWith('/') ? meta.path : `/${meta.path}`}`
       upsertProperty('og:url', url)
@@ -47,5 +55,5 @@ export function useSeo(meta: {
     upsertMeta('twitter:card', 'summary_large_image')
     upsertMeta('twitter:title', fullTitle)
     upsertMeta('twitter:description', meta.description)
-  }, [meta.title, meta.description, meta.path])
+  }, [meta.title, meta.description, meta.path, meta.image])
 }

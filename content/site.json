@@ -14,5 +14,6 @@
     "weekdays": "17:00 - 01:00",
     "weekend": "12:00 - 02:00",
     "closed": "Maandag"
-  }
+  },
+  "seoImage": "/hero/hero-bar01.png"
 }

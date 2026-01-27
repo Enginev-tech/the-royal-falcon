@@ -28,9 +28,9 @@ function MenuBlock(props: {
         {props.categories.map((category) => (
           <div key={category.name} className="glass-card rounded-[var(--radius-card)] p-8 md:p-12">
             {/* Category Header */}
-            <h4 className="text-xl text-[var(--primary)] text-center tracking-widest uppercase mb-10">
+            <h3 className="text-xl text-[var(--primary)] text-center tracking-widest uppercase mb-10">
               {category.name}
-            </h4>
+            </h3>
             
             {/* Menu Items */}
             <ul className="space-y-8">
