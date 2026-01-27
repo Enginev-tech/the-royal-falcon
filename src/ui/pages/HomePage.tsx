@@ -20,12 +20,12 @@ export function HomePage() {
   return (
     <div>
       {/* Main Event - Featured Card with Image */}
-            <Section
-              id={home.mainEvent.section.id}
-              title={home.mainEvent.section.title}
-              subtitle={home.mainEvent.section.subtitle}
-              variant={home.mainEvent.section.variant}
-            >
+      <Section
+        id={home.mainEvent.section.id}
+        title={home.mainEvent.section.title}
+        subtitle={home.mainEvent.section.subtitle}
+        variant={home.mainEvent.section.variant}
+      >
         <div className="glass-card rounded-[var(--radius-card)] overflow-hidden">
           <div className="grid lg:grid-cols-2">
             {/* Image */}
@@ -71,7 +71,6 @@ export function HomePage() {
                     <span aria-hidden="true">&#8594;</span>
                   </a>
                 ))}
-              </div>
               </div>
             </div>
           </div>
