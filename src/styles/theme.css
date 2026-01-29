@@ -1,92 +1,8 @@
 /* The Royal Falcon - Theme */
 /* OPTION B — Modern Dark Club */
 
+/* Default to dark mode */
 :root {
-  --background: #f7f1e4;
-  --foreground: #15171a;
-
-  --card: #ffffff;
-  --card-foreground: #15171a;
-
-  --popover: #fff8ec;
-  --popover-foreground: #15171a;
-
-  --primary: #d3ad5e;
-  --primary-foreground: #0f1113;
-
-  --secondary: #8a2532;
-  --secondary-foreground: #f7f1e4;
-
-  --muted: #ece2cf;
-  --muted-foreground: #666a70;
-
-  --accent: #15171a;
-  --accent-foreground: #f7f1e4;
-
-  --destructive: #c81f2c;
-  --destructive-foreground: #fff7ef;
-
-  --border: #e3d7c2;
-  --input: #e3d7c2;
-  --ring: #d3ad5e;
-
-  --chart-1: #d3ad5e;
-  --chart-2: #e0c07b;
-  --chart-3: #8a2532;
-  --chart-4: #a83341;
-  --chart-5: #22262b;
-
-  --sidebar: #16181c;
-  --sidebar-foreground: #f7f1e4;
-  --sidebar-primary: #d3ad5e;
-  --sidebar-primary-foreground: #0f1113;
-  --sidebar-accent: #8a2532;
-  --sidebar-accent-foreground: #f7f1e4;
-  --sidebar-border: #2a2f36;
-  --sidebar-ring: #d3ad5e;
-
-  --font-sans: Google Sans, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Source Serif 4, ui-serif, serif;
-  --font-mono: Source Code Pro, ui-monospace, monospace;
-
-  --radius: 0.375rem;
-  --radius-sm: var(--radius);
-  --radius-md: var(--radius);
-  --radius-lg: var(--radius);
-  --radius-xl: var(--radius);
-  --radius-card: var(--radius);
-
-  --shadow-x: 1px;
-  --shadow-y: 1px;
-  --shadow-blur: 2.5px;
-  --shadow-spread: 0px;
-  --shadow-opacity: 0.08;
-  --shadow-color: oklch(0 0 0);
-
-  --shadow-2xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
-  --shadow-xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
-  --shadow-sm: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
-  --shadow: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
-  --shadow-md: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 2px 4px -1px hsl(0 0% 0% / 0.08);
-  --shadow-lg: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 4px 6px -1px hsl(0 0% 0% / 0.08);
-  --shadow-xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 8px 10px -1px hsl(0 0% 0% / 0.08);
-  --shadow-2xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.20);
-
-  --tracking-tighter: -0.05em;
-  --tracking-tight: -0.025em;
-  --tracking-normal: 0.025em;
-  --tracking-wide: 0.025em;
-  --tracking-wider: 0.05em;
-  --tracking-widest: 0.1em;
-  --spacing: 0.25rem;
-
-  --bg-main: url('/background/main-bg.png');
-  --bg-section: url('/background/Falcon-section.png');
-  --bg-pattern: url('/background/BG.png');
-  --background-gradient: linear-gradient(to bottom, #f7f1e4 0%, #efe6d7 50%, #f7f1e4 100%);
-}
-
-.dark {
   --background: #0b0d10;
   --foreground: #f2ead8;
 
@@ -130,15 +46,93 @@
   --sidebar-border: #1a1f28;
   --sidebar-ring: #ddb769;
 
-  --shadow-color: #0f0f0f;
-  --shadow-2xs: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.04);
-  --shadow-xs: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.04);
-  --shadow-sm: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 1px 2px -1px hsl(0 0% 5.8824% / 0.08);
-  --shadow: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 1px 2px -1px hsl(0 0% 5.8824% / 0.08);
-  --shadow-md: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 2px 4px -1px hsl(0 0% 5.8824% / 0.08);
-  --shadow-lg: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 4px 6px -1px hsl(0 0% 5.8824% / 0.08);
-  --shadow-xl: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 8px 10px -1px hsl(0 0% 5.8824% / 0.08);
-  --shadow-2xl: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.20);
+  --font-sans: Google Sans, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Source Serif 4, ui-serif, serif;
+  --font-mono: Source Code Pro, ui-monospace, monospace;
+
+  --radius: 0.375rem;
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+  --radius-card: var(--radius);
+
+  --shadow-x: 1px;
+  --shadow-y: 1px;
+  --shadow-blur: 2.5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.08;
+  --shadow-color: oklch(0 0 0);
+
+  --shadow-2xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
+  --shadow-xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
+  --shadow-sm: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
+  --shadow: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
+  --shadow-md: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 2px 4px -1px hsl(0 0% 0% / 0.08);
+  --shadow-lg: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 4px 6px -1px hsl(0 0% 0% / 0.08);
+  --shadow-xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 8px 10px -1px hsl(0 0% 0% / 0.08);
+  --shadow-2xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.20);
+
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0.025em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  --spacing: 0.25rem;
+
+  --bg-main: url('/background/main-bg.png');
+  --bg-section: url('/background/Falcon-section.png');
+  --bg-pattern: url('/background/BG.png');
+  --background-gradient: linear-gradient(to bottom, #0b0d10 0%, #0f1218 50%, #0b0d10 100%);
+}
+
+/* Optional light theme if needed */
+.light {
+  --background: #f7f1e4;
+  --foreground: #15171a;
+
+  --card: #ffffff;
+  --card-foreground: #15171a;
+
+  --popover: #fff8ec;
+  --popover-foreground: #15171a;
+
+  --primary: #d3ad5e;
+  --primary-foreground: #0f1113;
+
+  --secondary: #8a2532;
+  --secondary-foreground: #f7f1e4;
+
+  --muted: #ece2cf;
+  --muted-foreground: #666a70;
+
+  --accent: #15171a;
+  --accent-foreground: #f7f1e4;
+
+  --destructive: #c81f2c;
+  --destructive-foreground: #fff7ef;
+
+  --border: #e3d7c2;
+  --input: #e3d7c2;
+  --ring: #d3ad5e;
+
+  --chart-1: #d3ad5e;
+  --chart-2: #e0c07b;
+  --chart-3: #8a2532;
+  --chart-4: #a83341;
+  --chart-5: #22262b;
+
+  --sidebar: #16181c;
+  --sidebar-foreground: #f7f1e4;
+  --sidebar-primary: #d3ad5e;
+  --sidebar-primary-foreground: #0f1113;
+  --sidebar-accent: #8a2532;
+  --sidebar-accent-foreground: #f7f1e4;
+  --sidebar-border: #2a2f36;
+  --sidebar-ring: #d3ad5e;
+
+  --background-gradient: linear-gradient(to bottom, #f7f1e4 0%, #efe6d7 50%, #f7f1e4 100%);
 }
 
 body {
