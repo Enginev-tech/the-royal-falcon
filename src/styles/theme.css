@@ -1,106 +1,148 @@
-/* The Royal Falcon - Custom Theme */
-/* Dark mode as default - No light mode */
+/* The Royal Falcon - Theme */
+/* OPTION B — Modern Dark Club */
 
 :root {
-  /* Base Colors - Black & White */
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  
-  /* Background Images */
-  --bg-main: url('/background/main-bg.png');
-  --bg-section: url('/background/Falcon-section.png');
-  --bg-pattern: url('/background/BG.png');
-  
-  /* Background Gradient */
-  --background-gradient: linear-gradient(to bottom, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
-  
-  /* Card */
-  --card: #151515;
-  --card-foreground: #ffffff;
-  
-  /* Popover */
-  --popover: #0a0a0a;
-  --popover-foreground: #ffffff;
-  
-  /* Primary - White */
-  --primary: #ffffff;
-  --primary-foreground: #0a0a0a;
-  
-  /* Secondary - Light gray */
-  --secondary: #888888;
-  --secondary-foreground: #0a0a0a;
-  
-  /* Muted */
-  --muted: #262a31;
-  --muted-foreground: #cfcfc6;
-  
-  /* Accent */
-  --accent: #222222;
-  --accent-foreground: #ffffff;
-  
-  /* Destructive */
-  --destructive: #cc0000;
-  --destructive-foreground: #ffffff;
-  
-  /* Border & Input */
-  --border: #333333;
-  --input: #1a1a1a;
-  --ring: #ffffff;
-  
-  /* Chart Colors */
-  --chart-1: #ff9a8a;
-  --chart-2: #d1f2e5;
-  --chart-3: #fd8775;
-  --chart-4: #73e8b9;
-  --chart-5: #ffbcb2;
-  
-  /* Sidebar */
-  --sidebar: #16191e;
-  --sidebar-foreground: #fff4e6;
-  --sidebar-primary: #ffb1a5;
-  --sidebar-primary-foreground: #383b49;
-  --sidebar-accent: #1c2027;
-  --sidebar-accent-foreground: #ffb1a5;
-  --sidebar-border: #38454b;
-  --sidebar-ring: #fbde9c;
-  
-  /* Typography */
-  --font-sans: "Barlow Semi Condensed", ui-sans-serif, sans-serif, system-ui;
-  
-  /* Border Radius */
-  --radius-sm: 5px;
-  --radius-md: 5px;
-  --radius-lg: 5px;
-  --radius-xl: 12px;
-  --radius-card: 12px;
-  
-  /* Letter Spacing */
+  --background: #f7f1e4;
+  --foreground: #15171a;
+
+  --card: #ffffff;
+  --card-foreground: #15171a;
+
+  --popover: #fff8ec;
+  --popover-foreground: #15171a;
+
+  --primary: #d3ad5e;
+  --primary-foreground: #0f1113;
+
+  --secondary: #8a2532;
+  --secondary-foreground: #f7f1e4;
+
+  --muted: #ece2cf;
+  --muted-foreground: #666a70;
+
+  --accent: #15171a;
+  --accent-foreground: #f7f1e4;
+
+  --destructive: #c81f2c;
+  --destructive-foreground: #fff7ef;
+
+  --border: #e3d7c2;
+  --input: #e3d7c2;
+  --ring: #d3ad5e;
+
+  --chart-1: #d3ad5e;
+  --chart-2: #e0c07b;
+  --chart-3: #8a2532;
+  --chart-4: #a83341;
+  --chart-5: #22262b;
+
+  --sidebar: #16181c;
+  --sidebar-foreground: #f7f1e4;
+  --sidebar-primary: #d3ad5e;
+  --sidebar-primary-foreground: #0f1113;
+  --sidebar-accent: #8a2532;
+  --sidebar-accent-foreground: #f7f1e4;
+  --sidebar-border: #2a2f36;
+  --sidebar-ring: #d3ad5e;
+
+  --font-sans: Google Sans, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Source Serif 4, ui-serif, serif;
+  --font-mono: Source Code Pro, ui-monospace, monospace;
+
+  --radius: 0.375rem;
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+  --radius-card: var(--radius);
+
+  --shadow-x: 1px;
+  --shadow-y: 1px;
+  --shadow-blur: 2.5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.08;
+  --shadow-color: oklch(0 0 0);
+
+  --shadow-2xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
+  --shadow-xs: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.04);
+  --shadow-sm: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
+  --shadow: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 1px 2px -1px hsl(0 0% 0% / 0.08);
+  --shadow-md: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 2px 4px -1px hsl(0 0% 0% / 0.08);
+  --shadow-lg: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 4px 6px -1px hsl(0 0% 0% / 0.08);
+  --shadow-xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.08), 1px 8px 10px -1px hsl(0 0% 0% / 0.08);
+  --shadow-2xl: 1px 1px 2.5px 0px hsl(0 0% 0% / 0.20);
+
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
-  --tracking-normal: 0em;
+  --tracking-normal: 0.025em;
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
-  
-  /* Shadows */
-  --shadow-color: #0b0a09;
-  --shadow-2xs: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.25);
-  --shadow-xs: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.25);
-  --shadow-sm: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 1px 2px -3.5px hsl(30 10% 4% / 0.50);
-  --shadow: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 1px 2px -3.5px hsl(30 10% 4% / 0.50);
-  --shadow-md: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 2px 4px -3.5px hsl(30 10% 4% / 0.50);
-  --shadow-lg: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 4px 6px -3.5px hsl(30 10% 4% / 0.50);
-  --shadow-xl: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 0.50), 8px 8px 10px -3.5px hsl(30 10% 4% / 0.50);
-  --shadow-2xl: 8px 5.5px 31.5px -2.5px hsl(30 10% 4% / 1.25);
-  
-  /* Glassmorphism */
-  --glass-bg: rgba(22, 25, 30, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: 12px;
-  
-  /* Gradients */
-  --gradient-gold: linear-gradient(135deg, #ffb1a5, #ffd4a5);
-  --gradient-teal: linear-gradient(135deg, #72b1a4, #7dc9ab);
+  --spacing: 0.25rem;
+
+  --bg-main: url('/background/main-bg.png');
+  --bg-section: url('/background/Falcon-section.png');
+  --bg-pattern: url('/background/BG.png');
+  --background-gradient: linear-gradient(to bottom, #f7f1e4 0%, #efe6d7 50%, #f7f1e4 100%);
+}
+
+.dark {
+  --background: #0b0d10;
+  --foreground: #f2ead8;
+
+  --card: #111419;
+  --card-foreground: #f2ead8;
+
+  --popover: #141821;
+  --popover-foreground: #f2ead8;
+
+  --primary: #ddb769;
+  --primary-foreground: #0b0d10;
+
+  --secondary: #9b2d3b;
+  --secondary-foreground: #f2ead8;
+
+  --muted: #12161d;
+  --muted-foreground: #b9b0a0;
+
+  --accent: #f2ead8;
+  --accent-foreground: #0b0d10;
+
+  --destructive: #e2484f;
+  --destructive-foreground: #fff7ef;
+
+  --border: #232a35;
+  --input: #232a35;
+  --ring: #ddb769;
+
+  --chart-1: #ddb769;
+  --chart-2: #e7c98c;
+  --chart-3: #9b2d3b;
+  --chart-4: #b43d4c;
+  --chart-5: #232a35;
+
+  --sidebar: #090b0e;
+  --sidebar-foreground: #f2ead8;
+  --sidebar-primary: #ddb769;
+  --sidebar-primary-foreground: #0b0d10;
+  --sidebar-accent: #111419;
+  --sidebar-accent-foreground: #ddb769;
+  --sidebar-border: #1a1f28;
+  --sidebar-ring: #ddb769;
+
+  --shadow-color: #0f0f0f;
+  --shadow-2xs: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.04);
+  --shadow-xs: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.04);
+  --shadow-sm: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 1px 2px -1px hsl(0 0% 5.8824% / 0.08);
+  --shadow: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 1px 2px -1px hsl(0 0% 5.8824% / 0.08);
+  --shadow-md: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 2px 4px -1px hsl(0 0% 5.8824% / 0.08);
+  --shadow-lg: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 4px 6px -1px hsl(0 0% 5.8824% / 0.08);
+  --shadow-xl: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.08), 1px 8px 10px -1px hsl(0 0% 5.8824% / 0.08);
+  --shadow-2xl: 1px 1px 2.5px 0px hsl(0 0% 5.8824% / 0.20);
+}
+
+body {
+  letter-spacing: var(--tracking-normal);
 }
 
 /* Tailwind CSS v4 Theme Integration */
@@ -167,23 +209,3 @@
   --tracking-widest: var(--tracking-widest);
 }
 
-/* Force our theme colors over shadcn-glass-ui */
-:root,
-.glass,
-[data-theme="glass"],
-[data-theme] {
-  --primary: #ffb1a5 !important;
-  --primary-foreground: #383b49 !important;
-  --secondary: #72b1a4 !important;
-  --secondary-foreground: #383b49 !important;
-  --ring: #72b1a4 !important;
-  --background: #080a0d !important;
-  --foreground: #fff4e6 !important;
-  --card: #16191e !important;
-  --card-foreground: #f3ebd2 !important;
-  --muted: #2a2f36 !important;
-  --muted-foreground: #d2d2c8 !important;
-  --accent: #2b3a40 !important;
-  --accent-foreground: #efe6cc !important;
-  --border: #2e333b !important;
-}
